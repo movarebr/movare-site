@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOVARE | Assessoria Virtual Estratégica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .gold-text { color: #D4AF37; }
+        .bg-dark { background-color: #1a1a1a; }
+    </style>
+</head>
+<body class="bg-white text-gray-900 relative">
+
+    <nav class="flex justify-between items-center p-6 max-w-6xl mx-auto">
+        <div class="text-2xl font-bold tracking-tighter">MOVARE<span class="gold-text">.</span></div>
+        <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest text-gray-600">
+            <a href="#sobre" class="hover:text-black transition">Expertise</a>
+            <a href="#servicos" class="hover:text-black transition">Serviços</a>
+            <a href="#depoimentos" class="hover:text-black transition">Resultados</a>
+            <a href="https://instagram.com/movare.br" target="_blank" class="hover:text-black transition font-bold">@movare.br</a>
+        </div>
+        <a href="https://wa.me/5571983136600" target="_blank" class="bg-black text-white px-6 py-2 rounded-full text-sm hover:bg-gray-800 transition">Falar com Ágatha</a>
+    </nav>
+
+    <section class="max-w-6xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2">
+            <span class="text-xs uppercase tracking-[0.3em] text-gray-400 font-semibold mb-4 block">Boutique de Assessoria Virtual</span>
+            <h1 class="text-5xl md:text-6xl font-bold leading-[1.1] mb-6">
+                Sua operação no <span class="gold-text italic">piloto automático.</span>
+            </h1>
+            <p class="text-lg text-gray-600 mb-8 max-w-md leading-relaxed">
+                Gestão administrativa e comercial de alto nível para empresários que precisam focar no crescimento, não no operacional.
+            </p>
+            <div class="flex space-x-4">
+                <a href="#servicos" class="bg-black text-white px-8 py-4 rounded-md font-semibold hover:bg-gray-800 transition shadow-lg">Conhecer Soluções</a>
+            </div>
+        </div>
+        <div class="md:w-1/2 mt-12 md:mt-0 flex justify-end relative">
+            <div class="w-72 h-[450px] bg-gray-100 rounded-2xl shadow-2xl overflow-hidden grayscale hover:grayscale-0 transition duration-500">
+                 <img src="https://via.placeholder.com/400x600" alt="Ágatha Moreira" class="object-cover w-full h-full">
+            </div>
+            <div class="absolute -bottom-6 -left-6 bg-white p-6 shadow-xl rounded-lg hidden md:block">
+                <p class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-1">Foco Total</p>
+                <p class="text-xl font-semibold">+ Eficiência</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="bg-gray-50 py-24">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-12 text-center">
+                <div class="space-y-2">
+                    <h3 class="text-4xl font-bold italic gold-text">5 anos</h3>
+                    <p class="text-gray-500 uppercase text-xs tracking-widest font-bold">Atuação no mercado remoto</p>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="text-4xl font-bold italic gold-text">Financeiro</h3>
+                    <p class="text-gray-500 uppercase text-xs tracking-widest font-bold">Pós-graduação e Precisão</p>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="text-4xl font-bold italic gold-text">Processos</h3>
+                    <p class="text-gray-500 uppercase text-xs tracking-widest font-bold">Escalabilidade B2B</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos" class="max-w-6xl mx-auto px-6 py-24">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Soluções Corporativas</h2>
+            <p class="text-gray-500">O suporte que sua empresa precisa para crescer com ordem.</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-10">
+            <div class="group border border-gray-100 p-10 rounded-2xl bg-white hover:border-gray-900 transition-all duration-300">
+                <div class="w-12 h-12 bg-gray-100 rounded-lg mb-6 flex items-center justify-center group-hover:bg-black group-hover:text-white transition-colors text-2xl italic font-bold">A</div>
+                <h4 class="text-2xl font-bold mb-4">Assessoria Executiva</h4>
+                <p class="text-gray-600 mb-6 leading-relaxed">Gestão de agenda complexa, suporte administrativo estratégico, organização de ERP e fluxos internos de trabalho.</p>
+                <ul class="text-sm space-y-3 text-gray-500 font-medium">
+                    <li>• Implantação de Processos</li>
+                    <li>• Gestão de Documentos e Contratos</li>
+                    <li>• Suporte à Tomada de Decisão</li>
+                </ul>
+            </div>
+            <div class="group border border-gray-100 p-10 rounded-2xl bg-white hover:border-gray-900 transition-all duration-300">
+                <div class="w-12 h-12 bg-gray-100 rounded-lg mb-6 flex items-center justify-center group-hover:bg-[#D4AF37] group-hover:text-white transition-colors text-2xl italic font-bold">P</div>
+                <h4 class="text-2xl font-bold mb-4">Nicho: Perfumaria & Luxo</h4>
+                <p class="text-gray-600 mb-6 leading-relaxed">Atendimento comercial humanizado e braço direito para marcas que prezam pela excelência e experiência do cliente.</p>
+                <a href="https://movarebr.github.io/movare-proposta-perfumaria/" target="_blank" class="inline-block mt-4 text-black font-bold border-b-2 border-black pb-1 hover:text-gray-500 hover:border-gray-500 transition">Ver Proposta Especializada →</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="depoimentos" class="bg-black text-white py-24">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-16 italic gold-text">O que dizem nossos parceiros</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-neutral-900 p-8 rounded-xl text-left border border-neutral-800">
+                    <p class="text-gray-400 italic mb-6">"A MOVARE organizou meu financeiro e atendimento de uma forma que eu nunca imaginei ser possível. Recuperei 10h da minha semana."</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-neutral-700 rounded-full mr-3"></div>
+                        <div>
+                            <p class="font-bold text-sm">Empresário X</p>
+                            <p class="text-xs text-gray-500">CEO da Empresa Y</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-neutral-900 p-8 rounded-xl text-left border border-neutral-800">
+                    <p class="text-gray-400 italic mb-6">"O atendimento humanizado no WhatsApp aumentou nossa conversão de vendas em 25% no primeiro mês de parceria."</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-neutral-700 rounded-full mr-3"></div>
+                        <div>
+                            <p class="font-bold text-sm">Empreendedora Z</p>
+                            <p class="text-xs text-gray-500">Nicho de Estética</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-neutral-900 p-8 rounded-xl text-left border border-neutral-800">
+                    <p class="text-gray-400 italic mb-6">"Ter uma pós-graduada em finanças cuidando da minha operação me deu a segurança que eu precisava para investir."</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-neutral-700 rounded-full mr-3"></div>
+                        <div>
+                            <p class="font-bold text-sm">Diretor Comercial</p>
+                            <p class="text-xs text-gray-500">Setor Logístico</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-4xl font-bold mb-8">Pronto para profissionalizar sua gestão?</h2>
+        <p class="text-xl text-gray-500 mb-10 leading-relaxed">Agende uma reunião estratégica de 15 minutos e entenda como a MOVARE pode atuar no seu negócio.</p>
+        <a href="https://wa.me/5571983136600" target="_blank" class="bg-black text-white px-12 py-5 rounded-full font-bold text-lg hover:bg-gray-800 transition shadow-2xl inline-block">Solicitar Diagnóstico Gratuito</a>
+    </section>
+
+    <footer class="py-12 border-t border-gray-100 text-center text-gray-400 text-sm flex flex-col items-center">
+        <div class="mb-4">
+            <a href="https://instagram.com/movare.br" target="_blank" class="hover:text-black transition text-gray-500 font-semibold">Instagram: @movare.br</a>
+        </div>
+        <p>© 2026 MOVARE | Assessoria Estratégica. Salvador, Bahia.</p>
+    </footer>
+
+    <a href="https://wa.me/5571983136600" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco no WhatsApp" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform duration-300 flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+        </svg>
+    </a>
+
+</body>
+</html>
