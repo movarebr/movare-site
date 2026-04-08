@@ -42,16 +42,37 @@
 </head>
 <body class="antialiased">
 
-    <nav class="flex justify-between items-center p-6 max-w-7xl mx-auto border-b border-white/5 relative z-10">
-        <div class="text-2xl font-bold tracking-tighter text-white">MOVARE<span class="gold-text">.</span></div>
-        <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest text-gray-400">
-            <a href="#sobre" class="hover:text-white transition">Expertise</a>
-            <a href="#servicos" class="hover:text-white transition">Serviços</a>
-            <a href="#equipe" class="hover:text-white transition">Equipe</a>
-            <a href="https://instagram.com/movare.br" target="_blank" class="hover:text-white transition font-bold">@movare.br</a>
-        </div>
-        <a href="https://wa.me/5571983136600" target="_blank" class="bg-[#D4AF37] text-[#0A0F1C] px-6 py-2 rounded-full text-sm font-bold hover:bg-yellow-500 transition">Falar com a equipe</a>
-    </nav>
+    <header class="bg-[#F8F9FA] shadow-md relative z-50 w-full">
+        <nav class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+            
+            <a href="#" class="flex items-center">
+                <img src="1.png" alt="MOVARE Logo" class="h-16 w-auto mix-blend-multiply hover:opacity-90 transition">
+            </a>
+
+            <div class="hidden md:flex space-x-8 text-sm font-bold uppercase tracking-widest text-[#1A2B4C] items-center">
+                
+                <div class="relative group py-2">
+                    <button class="hover:text-[#D4AF37] transition flex items-center gap-1 uppercase tracking-widest font-bold outline-none cursor-pointer">
+                        Sobre
+                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    
+                    <div class="absolute left-0 mt-2 w-48 bg-white border border-gray-100 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top z-50">
+                        <a href="#sobre" class="block px-5 py-3 text-gray-700 hover:bg-[#F8F9FA] hover:text-[#D4AF37] border-b border-gray-50 transition rounded-t-lg">A Empresa</a>
+                        <a href="#equipe" class="block px-5 py-3 text-gray-700 hover:bg-[#F8F9FA] hover:text-[#D4AF37] transition rounded-b-lg">Equipe</a>
+                    </div>
+                </div>
+
+                <a href="#servicos" class="hover:text-[#D4AF37] transition py-2">Soluções</a>
+                <a href="#resultados" class="hover:text-[#D4AF37] transition py-2">Clientes</a>
+                <a href="https://instagram.com/movare.br" target="_blank" class="hover:text-[#D4AF37] transition py-2">Redes Sociais</a>
+            </div>
+
+            <a href="https://wa.me/5571983136600" target="_blank" class="bg-[#D4AF37] text-[#0A0F1C] px-6 py-2.5 rounded-full text-sm font-bold hover:bg-yellow-500 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+                Falar com a equipe
+            </a>
+        </nav>
+    </header>
 
     <section class="fundo-azul-texturizado min-h-[85vh] flex items-center">
         <div class="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center w-full">
