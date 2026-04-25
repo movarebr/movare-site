@@ -3,430 +3,464 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MOVARE | Assessoria Virtual Estratégica</title>
+    <title>MOVARE | Assessoria Virtual Estratégica — Delegue o operacional</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; background-color: #0A0F1C; color: #E2E8F0; }
-        .gold-text { color: #D4AF37; }
-        
-        /* Fundo Azul Escuro com Degradê */
-        .fundo-azul-texturizado {
-            position: relative;
-            background: radial-gradient(ellipse 80% 60% at 50% 0%, #1A2B4C 0%, #0A0F1C 70%);
-            overflow: hidden;
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #F5F7FA;
+            color: #1E293B;
         }
 
-        /* Textura Dourada Suave */
-        .fundo-azul-texturizado::before {
+        /* ========== FUNDO AZUL ESCURO (Hero, CTA Final, Footer) ========== */
+        .bg-deep-blue {
+            background: radial-gradient(ellipse 80% 60% at 50% 0%, #1A2B4C 0%, #0B1324 70%);
+            position: relative;
+            overflow: hidden;
+        }
+        .bg-deep-blue::before {
             content: '';
             position: absolute;
             inset: 0;
             pointer-events: none;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4AF37' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4AF37' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
             z-index: 0;
         }
-
-        .fundo-azul-texturizado > * {
+        .bg-deep-blue > * {
             position: relative;
             z-index: 1;
         }
 
-        /* Degradê para textos */
+        /* ========== FUNDOS INTERMEDIÁRIOS (Ritmo Cromático) ========== */
+        .bg-soft-blue {
+            background-color: #E8EEF4;
+        }
+        .bg-lighter-blue {
+            background: linear-gradient(180deg, #F4F7FA 0%, #E8EEF4 100%);
+        }
+
+        /* ========== TEXTO DEGRADÊ DOURADO ========== */
         .text-gradient {
-            background: linear-gradient(to right, #D4AF37, #F3E5AB);
+            background: linear-gradient(135deg, #D4AF37 0%, #F3E5AB 50%, #D4AF37 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ========== BOTÃO FLUTUANTE DO WHATSAPP ========== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 9999;
+            background-color: #25D366;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.40);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            animation: pulse-whatsapp 2s infinite;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.08);
+            box-shadow: 0 12px 32px rgba(37, 211, 102, 0.55);
+            animation: none;
+        }
+        @keyframes pulse-whatsapp {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.50); }
+            70% { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
     </style>
 </head>
 <body class="antialiased">
 
-    <header class="bg-[#F8F9FA] shadow-md relative z-50 w-full">
-        <nav class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
-            
+    <!-- ==================== HEADER (Limpo e Claro) ==================== -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="flex justify-between items-center px-6 py-3 max-w-7xl mx-auto">
             <a href="#" class="flex items-center">
-                <img src="1.png" alt="MOVARE Logo" class="h-16 w-auto mix-blend-multiply hover:opacity-90 transition">
+                <img src="1.png" alt="MOVARE Logo" class="h-14 w-auto mix-blend-multiply hover:opacity-90 transition">
             </a>
 
-            <div class="hidden md:flex space-x-8 text-sm font-bold uppercase tracking-widest text-[#1A2B4C] items-center">
-                
+            <div class="hidden md:flex space-x-8 text-sm font-semibold uppercase tracking-widest text-[#0B1324] items-center">
                 <div class="relative group py-2">
-                    <button class="hover:text-[#D4AF37] transition flex items-center gap-1 uppercase tracking-widest font-bold outline-none cursor-pointer">
+                    <button class="hover:text-[#D4AF37] transition flex items-center gap-1 outline-none cursor-pointer">
                         Sobre
                         <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
-                    
-                    <div class="absolute left-0 mt-2 w-48 bg-white border border-gray-100 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top z-50">
-                        <a href="#sobre" class="block px-5 py-3 text-gray-700 hover:bg-[#F8F9FA] hover:text-[#D4AF37] border-b border-gray-50 transition rounded-t-lg">A Empresa</a>
-                        <a href="#equipe" class="block px-5 py-3 text-gray-700 hover:bg-[#F8F9FA] hover:text-[#D4AF37] transition rounded-b-lg">Equipe</a>
+                    <div class="absolute left-0 mt-2 w-56 bg-white border border-gray-100 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                        <a href="#sobre" class="block px-6 py-3 text-gray-700 hover:bg-gray-50 hover:text-[#D4AF37] border-b border-gray-100 transition rounded-t-lg font-medium">Nossa Trajetória</a>
+                        <a href="#equipe" class="block px-6 py-3 text-gray-700 hover:bg-gray-50 hover:text-[#D4AF37] transition rounded-b-lg font-medium">Equipe</a>
                     </div>
                 </div>
-
                 <a href="#servicos" class="hover:text-[#D4AF37] transition py-2">Soluções</a>
                 <a href="#resultados" class="hover:text-[#D4AF37] transition py-2">Clientes</a>
-                <a href="https://instagram.com/movare.br" target="_blank" class="hover:text-[#D4AF37] transition py-2">Redes Sociais</a>
+                <a href="https://instagram.com/movare.br" target="_blank" class="hover:text-[#D4AF37] transition py-2">Instagram</a>
             </div>
 
-            <a href="https://wa.me/5571983136600" target="_blank" class="bg-[#D4AF37] text-[#0A0F1C] px-6 py-2.5 rounded-full text-sm font-bold hover:bg-yellow-500 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+            <a href="https://wa.me/5571983136600" target="_blank" class="bg-[#D4AF37] text-[#0B1324] px-6 py-2.5 rounded-full text-sm font-bold hover:bg-yellow-500 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 shadow-md">
                 Falar com a equipe
             </a>
         </nav>
     </header>
 
-    <section class="fundo-azul-texturizado min-h-[85vh] flex items-center">
+    <!-- ==================== 1. HERO (Fundo Azul Escuro — O Problema) ==================== -->
+    <section class="bg-deep-blue min-h-[90vh] flex items-center">
         <div class="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center w-full">
             <div class="md:w-1/2 text-left">
-                <span class="text-xs uppercase tracking-[0.3em] text-[#D4AF37] font-semibold mb-4 block">Assessoria Virtual Estratégica</span>
-                <h1 class="text-5xl md:text-7xl font-bold leading-[1.1] mb-6 text-white">
-                    Sua operação no <span class="text-gradient italic">piloto automático.</span>
+                <span class="text-xs uppercase tracking-[0.3em] text-[#D4AF37] font-semibold mb-6 block">Assessoria Virtual Estratégica</span>
+                <h1 class="text-5xl md:text-7xl font-extrabold leading-[1.08] mb-6 text-white">
+                    Chega de ser o(a) faz-tudo. <br>
+                    <span class="text-gradient italic">Recupere suas horas</span> e foque no crescimento.
                 </h1>
-                <p class="text-lg text-gray-400 mb-10 max-w-lg leading-relaxed">
-                    Gestão de atendimento humanizado e administrativa de alto nível para empresários que precisam focar no crescimento, não no operacional.
+                <p class="text-lg text-gray-300 mb-10 max-w-lg leading-relaxed">
+                    Assessoria virtual especializada para <strong class="text-white">empresários do luxo, executivos e MEIs</strong> que precisam delegar o operacional com total segurança e sigilo.
                 </p>
-                <div class="flex space-x-4">
-                    <a href="#servicos" class="bg-[#D4AF37] text-[#0A0F1C] px-8 py-4 rounded-md font-bold hover:bg-yellow-500 transition shadow-lg shadow-yellow-500/20">Conhecer Soluções</a>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#perfis" class="bg-[#D4AF37] text-[#0B1324] px-8 py-4 rounded-md font-bold hover:bg-yellow-500 transition shadow-xl shadow-yellow-500/20 text-center">
+                        Quero Delegar Agora
+                    </a>
+                    <a href="#perfis" class="border-2 border-white/30 text-white px-8 py-4 rounded-md font-bold hover:bg-white/10 transition text-center backdrop-blur-sm">
+                        Ver Soluções por Perfil
+                    </a>
                 </div>
             </div>
-            
+
             <div class="md:w-1/2 mt-16 md:mt-0 flex justify-end relative">
                 <div class="w-80 h-[500px] bg-[#131E32] rounded-2xl shadow-2xl border border-white/10 relative overflow-hidden group">
-                     <div class="absolute inset-0 bg-gradient-to-tr from-[#1A2B4C] to-transparent opacity-40 z-10 pointer-events-none rounded-2xl"></div>
-
-                     <img src="juntos.jpeg" 
-                          alt="Ágatha e Rafael - Equipe MOVARE" 
-                          class="absolute inset-0 w-full h-full object-cover rounded-2xl transition-transform duration-500 ease-out group-hover:scale-110 z-0">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-[#1A2B4C] to-transparent opacity-30 z-10 pointer-events-none rounded-2xl"></div>
+                    <img src="juntos.jpeg"
+                         alt="Ágatha e Rafael - Equipe MOVARE"
+                         class="absolute inset-0 w-full h-full object-cover rounded-2xl transition-transform duration-700 ease-out group-hover:scale-110 z-0">
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="sobre" class="bg-[#060A14] py-20 border-y border-white/5">
+    <!-- ==================== 2. NÚMEROS (Fundo Azul Suave — Transição) ==================== -->
+    <section id="sobre" class="bg-soft-blue py-20 border-y border-white/30">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-3 gap-12 text-center">
                 <div class="space-y-2">
-                    <h3 class="text-4xl font-bold italic gold-text">+ 6 anos</h3>
-                    <p class="text-gray-500 uppercase text-xs tracking-widest font-bold">Atuação no mercado</p>
+                    <h3 class="text-4xl font-extrabold text-[#0B1324]">+ 6 anos</h3>
+                    <p class="text-[#0B1324]/70 uppercase text-xs tracking-widest font-bold">Atuação no mercado</p>
                 </div>
                 <div class="space-y-2">
-                    <h3 class="text-4xl font-bold italic gold-text">+ 80 clientes</h3>
-                    <p class="text-gray-500 uppercase text-xs tracking-widest font-bold">Na Europa e América</p>
+                    <h3 class="text-4xl font-extrabold text-[#0B1324]">+ 80 clientes</h3>
+                    <p class="text-[#0B1324]/70 uppercase text-xs tracking-widest font-bold">Na Europa e América</p>
                 </div>
                 <div class="space-y-2">
-                    <h3 class="text-4xl font-bold italic gold-text">100% atuação</h3>
-                    <p class="text-gray-500 uppercase text-xs tracking-widest font-bold">Online e Remoto</p>
+                    <h3 class="text-4xl font-extrabold text-[#0B1324]">100% online</h3>
+                    <p class="text-[#0B1324]/70 uppercase text-xs tracking-widest font-bold">Atuação Remota</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="bg-[#0A0F1C] py-24">
+    <!-- ==================== 3. SOBRE A EMPRESA (Fundo Branco — Clareza Total) ==================== -->
+    <section class="bg-white py-24">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
                 <span class="text-xs font-bold tracking-[0.2em] text-[#D4AF37] uppercase">Sobre a empresa</span>
-                <h2 class="text-3xl md:text-5xl font-bold mb-4 text-white mt-2">Conheça um pouco da empresa que <span class="text-gradient italic">fará parte do seu time</span></h2>
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 text-[#0B1324] mt-2">A parceira que vai <span class="text-gradient italic">entrar no seu time</span></h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">Chega de perder vendas e noites de sono com o operacional.</p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-10">
-                <div class="bg-[#131E32] p-10 rounded-2xl border border-white/10 hover:border-[#D4AF37]/50 transition-colors duration-300 relative overflow-hidden group shadow-xl">
-                    <div class="w-14 h-14 bg-white/5 rounded-xl flex items-center justify-center mb-8 border border-[#D4AF37]/30 text-[#D4AF37]">
+                <!-- Card Trajetória -->
+                <div class="bg-[#F8FAFC] p-10 rounded-2xl border border-gray-200 hover:border-[#D4AF37]/60 hover:shadow-xl transition-all duration-300 relative overflow-hidden group">
+                    <div class="w-14 h-14 bg-[#0B1324] rounded-xl flex items-center justify-center mb-8 text-[#D4AF37]">
                         <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
                     </div>
-                    <h3 class="text-2xl font-bold text-white mb-6">Nossa Trajetória</h3>
-                    <p class="text-gray-400 leading-relaxed mb-6 text-sm md:text-base">
-                        A MOVARE é uma empresa de <strong class="text-white">assistência virtual</strong> que atua <strong class="text-white">desde 2020</strong> nas vertentes <strong class="text-white">administrativas e financeiras</strong> para as outras empresas. Fundada por Ágatha Moreira, administradora e pós graduada em finanças, possui experiência de 10 anos no setor.
+                    <h3 class="text-2xl font-bold text-[#0B1324] mb-6">Nossa Trajetória</h3>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        Em 2020, <strong class="text-[#0B1324]">Ágatha Moreira</strong> viu empresários brilhantes afundados em planilhas e tarefas que não eram deles. Criamos a <strong class="text-[#0B1324]">MOVARE</strong> para ser o braço direito operacional que liberta esses empreendedores.
                     </p>
-                    <p class="text-gray-400 leading-relaxed text-sm md:text-base">
-                        Uma empresa com <strong class="text-white">atuação totalmente online</strong>, prestante suporte para pequenas empresas e empresárias que precisam de um <strong class="text-white">direcionamento, gestão e até mesmo auxilio</strong> nas atividades do dia a dia.
+                    <p class="text-gray-600 leading-relaxed">
+                        Atuação <strong class="text-[#0B1324]">100% online</strong>, suporte para pequenas empresas e empresárias que precisam de <strong class="text-[#0B1324]">direcionamento, gestão e auxílio</strong> nas atividades do dia a dia.
                     </p>
                 </div>
 
-                <div class="bg-[#131E32] p-10 rounded-2xl border border-white/10 hover:border-[#D4AF37]/50 transition-colors duration-300 relative overflow-hidden group shadow-xl flex flex-col justify-between">
+                <!-- Card LGPD -->
+                <div class="bg-[#F8FAFC] p-10 rounded-2xl border border-gray-200 hover:border-[#D4AF37]/60 hover:shadow-xl transition-all duration-300 relative overflow-hidden group flex flex-col justify-between">
                     <div>
-                        <div class="w-14 h-14 bg-white/5 rounded-xl flex items-center justify-center mb-8 border border-[#D4AF37]/30 text-[#D4AF37]">
+                        <div class="w-14 h-14 bg-[#0B1324] rounded-xl flex items-center justify-center mb-8 text-[#D4AF37]">
                             <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                         </div>
-                        <h3 class="text-2xl font-bold text-white mb-8">Certificado de LGPD</h3>
-                        
+                        <h3 class="text-2xl font-bold text-[#0B1324] mb-8">Certificado de LGPD</h3>
                         <div class="flex items-center gap-8 mb-8">
-                             <div class="w-28 h-28 bg-white p-2 rounded-lg shadow-lg">
-                                 <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Movare+LGPD+Protecao+de+Dados" alt="QR Code LGPD" class="w-full h-full">
-                             </div>
-                             <div class="text-[#D4AF37]">
-                                 <svg class="w-20 h-20 opacity-90 drop-shadow-[0_0_15px_rgba(212,175,55,0.4)]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                             </div>
+                            <div class="w-28 h-28 bg-white p-2 rounded-lg shadow-md border border-gray-200">
+                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Movare+LGPD+Protecao+de+Dados" alt="QR Code LGPD" class="w-full h-full">
+                            </div>
+                            <div class="text-[#D4AF37]">
+                                <svg class="w-20 h-20 drop-shadow-md" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            </div>
                         </div>
                     </div>
-
-                    <p class="text-gray-400 leading-relaxed text-sm md:text-base">
-                        <strong class="text-white">Equipe altamente treinada e certificada</strong> pela LGPD, atuamos com total sigilo com as informações de nossos clientes, buscando sempre a excelência nos resultados.
+                    <p class="text-gray-600 leading-relaxed">
+                        <strong class="text-[#0B1324]">Equipe altamente treinada e certificada</strong> pela LGPD, atuamos com total sigilo com as informações de nossos clientes, buscando sempre a excelência nos resultados.
                     </p>
+                    <!-- Selo de Confiança Visual -->
+                    <div class="mt-4 inline-flex items-center gap-2 bg-green-50 text-green-800 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider border border-green-200">
+                        <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span> Conformidade LGPD · Sigilo Garantido
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-        <section id="servicos" class="bg-[#F8FAFC] py-24">
+    <!-- ==================== 4. SERVIÇOS — "Escolha Seu Perfil" (Fundo Claro — A Solução) ==================== -->
+    <section id="perfis" class="bg-[#F5F7FA] py-24">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-bold mb-4 text-[#0A0F1C]">Soluções Corporativas</h2>
-                <p class="text-gray-600">O suporte que sua empresa precisa para crescer com ordem.</p>
+                <span class="text-xs font-bold tracking-[0.2em] text-[#D4AF37] uppercase">Qual é o seu momento?</span>
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 text-[#0B1324] mt-2">Escolha seu <span class="text-gradient italic">perfil</span> e veja como podemos ajudar</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">Cada negócio tem uma dor diferente. Clique no seu perfil e descubra a solução sob medida.</p>
             </div>
-            
-            <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
-                <div class="group relative rounded-2xl overflow-hidden shadow-2xl h-full min-h-[550px] flex flex-col justify-end p-8 transition-all duration-300 hover:-translate-y-2 border border-black/10 hover:border-[#D4AF37]/80">
-                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80')] bg-cover bg-center transition-transform duration-700 group-hover:scale-110"></div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0A0F1C] via-[#0A0F1C]/90 to-[#0A0F1C]/40 group-hover:bg-[#0A0F1C]/80 transition-colors duration-500"></div>
 
-                    <div class="relative z-10 flex flex-col h-full text-left pt-6">
-                        <h4 class="text-2xl font-bold mb-4 text-white">Assessoria Executiva</h4>
-                        <p class="text-gray-400 mb-6 leading-relaxed flex-grow text-sm">Gestão de agenda complexa, suporte administrativo estratégico, organização de ERP e fluxos internos de trabalho.</p>
-                        <ul class="text-sm space-y-3 text-gray-300 font-medium mb-8">
-                            <li><span class="text-[#D4AF37] mr-2">◆</span>Implantação de Processos</li>
-                            <li><span class="text-[#D4AF37] mr-2">◆</span>Gestão de Documentos</li>
-                            <li><span class="text-[#D4AF37] mr-2">◆</span>Suporte à Decisão</li>
-                        </ul>
-                        <a href="https://movarebr.github.io/movare-proposta-assessoria/" target="_blank" class="inline-block mt-auto bg-[#D4AF37] text-[#0A0F1C] px-6 py-3 rounded-md font-bold transition-all duration-300 hover:scale-105 hover:bg-yellow-500 shadow-[0_0_20px_rgba(212,175,55,0.2)] w-max">
-                            Ver Proposta →
-                        </a>
+            <!-- Cards de Perfil (Segmentação Visual) -->
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Card 1: Marcas de Luxo e Perfumaria -->
+                <div class="group bg-white rounded-2xl p-10 shadow-lg border border-gray-100 hover:shadow-2xl hover:-translate-y-2 hover:border-[#D4AF37]/60 transition-all duration-300 flex flex-col text-center">
+                    <div class="w-20 h-20 mx-auto bg-yellow-50 rounded-full flex items-center justify-center mb-8 text-[#D4AF37] group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                     </div>
+                    <h3 class="text-2xl font-bold text-[#0B1324] mb-4">Marcas de Luxo & Perfumaria</h3>
+                    <p class="text-gray-500 mb-8 flex-grow leading-relaxed">Para quem não pode errar na experiência do cliente. Atendimento humanizado e braço direito para marcas de excelência.</p>
+                    <ul class="text-left space-y-3 text-gray-600 font-medium mb-10">
+                        <li class="flex items-start gap-3"><span class="text-[#D4AF37] font-bold mt-1">◆</span> Atendimento no WhatsApp</li>
+                        <li class="flex items-start gap-3"><span class="text-[#D4AF37] font-bold mt-1">◆</span> Tradução Sensorial</li>
+                        <li class="flex items-start gap-3"><span class="text-[#D4AF37] font-bold mt-1">◆</span> Recuperação e Pós-venda</li>
+                    </ul>
+                    <a href="https://movarebr.github.io/movare-proposta-perfumaria/" target="_blank" class="w-full bg-[#D4AF37] text-[#0B1324] px-8 py-4 rounded-lg font-bold hover:bg-yellow-500 transition-all duration-300 shadow-lg hover:shadow-yellow-500/30 text-sm uppercase tracking-wider">
+                        Ver Solução para Luxo →
+                    </a>
                 </div>
 
-                <div class="group relative rounded-2xl overflow-hidden shadow-2xl h-full min-h-[550px] flex flex-col justify-end p-8 transition-all duration-300 hover:-translate-y-2 border border-black/10 hover:border-[#D4AF37]/80">
-                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1594035910387-fea47794261f?w=800&q=80')] bg-cover bg-center transition-transform duration-700 group-hover:scale-110"></div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0A0F1C] via-[#0A0F1C]/90 to-[#0A0F1C]/40 group-hover:bg-[#0A0F1C]/80 transition-colors duration-500"></div>
-
-                    <div class="relative z-10 flex flex-col h-full text-left pt-6">
-                        <h4 class="text-2xl font-bold mb-4 text-white">Nicho: Perfumaria & Luxo</h4>
-                        <p class="text-gray-400 mb-6 leading-relaxed flex-grow text-sm">Atendimento comercial humanizado e braço direito para marcas que prezam pela excelência e experiência do cliente.</p>
-                        <ul class="text-sm space-y-3 text-gray-300 font-medium mb-8">
-                            <li><span class="text-[#D4AF37] mr-2">◆</span>Atendimento no WhatsApp</li>
-                            <li><span class="text-[#D4AF37] mr-2">◆</span>Tradução Sensorial</li>
-                            <li><span class="text-[#D4AF37] mr-2">◆</span>Recuperação e Pós-venda</li>
-                        </ul>
-                        <a href="https://movarebr.github.io/movare-proposta-perfumaria/" target="_blank" class="inline-block mt-auto bg-[#D4AF37] text-[#0A0F1C] px-6 py-3 rounded-md font-bold transition-all duration-300 hover:scale-105 hover:bg-yellow-500 shadow-[0_0_20px_rgba(212,175,55,0.2)] w-max">
-                            Ver Proposta →
-                        </a>
+                <!-- Card 2: Executivos e Empresários -->
+                <div class="group bg-white rounded-2xl p-10 shadow-lg border border-gray-100 hover:shadow-2xl hover:-translate-y-2 hover:border-[#D4AF37]/60 transition-all duration-300 flex flex-col text-center">
+                    <div class="w-20 h-20 mx-auto bg-blue-50 rounded-full flex items-center justify-center mb-8 text-[#1A2B4C] group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
                     </div>
+                    <h3 class="text-2xl font-bold text-[#0B1324] mb-4">Executivos & Empresários</h3>
+                    <p class="text-gray-500 mb-8 flex-grow leading-relaxed">Para quem precisa de um braço direito na gestão. Foco total no estratégico enquanto cuidamos do operacional.</p>
+                    <ul class="text-left space-y-3 text-gray-600 font-medium mb-10">
+                        <li class="flex items-start gap-3"><span class="text-[#D4AF37] font-bold mt-1">◆</span> Implantação de Processos</li>
+                        <li class="flex items-start gap-3"><span class="text-[#D4AF37] font-bold mt-1">◆</span> Gestão de Documentos</li>
+                        <li class="flex items-start gap-3"><span class="text-[#D4AF37] font-bold mt-1">◆</span> Suporte à Decisão</li>
+                    </ul>
+                    <a href="https://movarebr.github.io/movare-proposta-assessoria/" target="_blank" class="w-full bg-[#1A2B4C] text-white px-8 py-4 rounded-lg font-bold hover:bg-[#0B1324] transition-all duration-300 shadow-lg hover:shadow-[#1A2B4C]/30 text-sm uppercase tracking-wider">
+                        Ver Solução Executiva →
+                    </a>
                 </div>
 
-                <div class="group relative rounded-2xl overflow-hidden shadow-2xl h-full min-h-[550px] flex flex-col justify-end p-8 transition-all duration-300 hover:-translate-y-2 border border-black/10 hover:border-[#D4AF37]/80">
-                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80')] bg-cover bg-center transition-transform duration-700 group-hover:scale-110"></div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0A0F1C] via-[#0A0F1C]/90 to-[#0A0F1C]/40 group-hover:bg-[#0A0F1C]/80 transition-colors duration-500"></div>
-
-                    <div class="relative z-10 flex flex-col h-full text-left pt-6">
-                        <h4 class="text-2xl font-bold mb-4 text-white">Assessoria para MEI</h4>
-                        <p class="text-gray-400 mb-6 leading-relaxed flex-grow text-sm">Suporte completo para autônomos e microempreendedores: Uber, nail designers, cabeleireiros, trancistas e mais.</p>
-                        <ul class="text-sm space-y-3 text-gray-300 font-medium mb-8">
-                            <li><span class="text-[#D4AF37] mr-2">◆</span>Abertura e Fechamento</li>
-                            <li><span class="text-[#D4AF37] mr-2">◆</span>Emissão de Notas Fiscais</li>
-                            <li><span class="text-[#D4AF37] mr-2">◆</span>Regularização e DASN</li>
-                        </ul>
-                        <a href="https://movarebr.github.io/movare-proposta-mei/" target="_blank" class="inline-block mt-auto bg-[#D4AF37] text-[#0A0F1C] px-6 py-3 rounded-md font-bold transition-all duration-300 hover:scale-105 hover:bg-yellow-500 shadow-[0_0_20px_rgba(212,175,55,0.2)] w-max">
-                            Ver Proposta →
-                        </a>
+                <!-- Card 3: Autônomos e MEIs -->
+                <div class="group bg-white rounded-2xl p-10 shadow-lg border border-gray-100 hover:shadow-2xl hover:-translate-y-2 hover:border-[#D4AF37]/60 transition-all duration-300 flex flex-col text-center">
+                    <div class="w-20 h-20 mx-auto bg-green-50 rounded-full flex items-center justify-center mb-8 text-green-700 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
                     </div>
+                    <h3 class="text-2xl font-bold text-[#0B1324] mb-4">Autônomos & MEIs</h3>
+                    <p class="text-gray-500 mb-8 flex-grow leading-relaxed">Para quem trabalha sozinho e odeia a parte fiscal. Simplificamos sua burocracia: Uber, nail designers, trancistas e mais.</p>
+                    <ul class="text-left space-y-3 text-gray-600 font-medium mb-10">
+                        <li class="flex items-start gap-3"><span class="text-[#D4AF37] font-bold mt-1">◆</span> Abertura e Fechamento</li>
+                        <li class="flex items-start gap-3"><span class="text-[#D4AF37] font-bold mt-1">◆</span> Emissão de Notas Fiscais</li>
+                        <li class="flex items-start gap-3"><span class="text-[#D4AF37] font-bold mt-1">◆</span> Regularização e DASN</li>
+                    </ul>
+                    <a href="https://movarebr.github.io/movare-proposta-mei/" target="_blank" class="w-full bg-green-600 text-white px-8 py-4 rounded-lg font-bold hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-green-600/30 text-sm uppercase tracking-wider">
+                        Ver Solução para MEI →
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="resultados" class="bg-gradient-to-br from-[#F8F9FA] via-[#C9D6E1] to-[#112A46] py-24 border-y border-black/5">
+    <!-- ==================== 5. RESULTADOS REAIS (Fundo Lilás Claro — Acolhimento e Prova Social) ==================== -->
+    <section id="resultados" class="bg-lighter-blue py-24 border-y border-black/5">
         <div class="max-w-7xl mx-auto px-6">
-            
             <div class="grid lg:grid-cols-2 gap-16 items-start">
-                
+                <!-- Marcas que Movemos -->
                 <div>
                     <div class="mb-10">
-                        <span class="text-xs font-bold tracking-[0.2em] text-[#D4AF37] uppercase shadow-sm">Parcerias de Sucesso</span>
-                        <h2 class="text-3xl md:text-4xl font-bold text-[#0A0F1C] mt-2">Marcas que <span class="text-gradient italic">movemos</span></h2>
+                        <span class="text-xs font-bold tracking-[0.2em] text-[#D4AF37] uppercase">Parcerias de Sucesso</span>
+                        <h2 class="text-3xl md:text-4xl font-bold text-[#0B1324] mt-2">Marcas que <span class="text-gradient italic">movemos</span></h2>
                     </div>
-                    
                     <div class="grid grid-cols-3 sm:grid-cols-4 gap-y-8 gap-x-4">
-                        
+                        <!-- Mesmos clientes, mantidos -->
                         <div class="text-center group">
-                            <div class="w-16 h-16 mx-auto rounded-full overflow-hidden border border-white/20 group-hover:border-[#D4AF37] transition duration-300 mb-3 bg-[#0A0F1C]/80 backdrop-blur-md flex items-center justify-center shadow-xl">
-                                <span class="text-white font-serif font-bold italic">YF</span>
-                            </div>
-                            <a href="#" target="_blank" class="text-[11px] text-gray-700 font-semibold hover:text-[#D4AF37] transition block truncate px-1">@yasminfernandesnutri</a>
+                            <div class="w-16 h-16 mx-auto rounded-full overflow-hidden border-2 border-white bg-[#0B1324] flex items-center justify-center shadow-lg group-hover:border-[#D4AF37] transition duration-300 mb-3"><span class="text-white font-serif font-bold italic">YF</span></div>
+                            <span class="text-[11px] text-gray-600 font-semibold block truncate px-1">@yasminfernandesnutri</span>
                         </div>
-
                         <div class="text-center group">
-                            <div class="w-16 h-16 mx-auto rounded-full overflow-hidden border border-white/20 group-hover:border-[#D4AF37] transition duration-300 mb-3 bg-[#0A0F1C]/80 backdrop-blur-md flex items-center justify-center shadow-xl">
-                                <span class="text-white font-serif font-bold italic">BC</span>
-                            </div>
-                            <a href="#" target="_blank" class="text-[11px] text-gray-700 font-semibold hover:text-[#D4AF37] transition block truncate px-1">@beatrizcassane</a>
+                            <div class="w-16 h-16 mx-auto rounded-full overflow-hidden border-2 border-white bg-[#0B1324] flex items-center justify-center shadow-lg group-hover:border-[#D4AF37] transition duration-300 mb-3"><span class="text-white font-serif font-bold italic">BC</span></div>
+                            <span class="text-[11px] text-gray-600 font-semibold block truncate px-1">@beatrizcassane</span>
                         </div>
-
                         <div class="text-center group">
-                            <div class="w-16 h-16 mx-auto rounded-full overflow-hidden border border-white/20 group-hover:border-[#D4AF37] transition duration-300 mb-3 bg-[#0A0F1C]/80 backdrop-blur-md flex items-center justify-center shadow-xl">
-                                <span class="text-white font-serif font-bold italic">LL</span>
-                            </div>
-                            <a href="#" target="_blank" class="text-[11px] text-gray-700 font-semibold hover:text-[#D4AF37] transition block truncate px-1">@lyralibero</a>
+                            <div class="w-16 h-16 mx-auto rounded-full overflow-hidden border-2 border-white bg-[#0B1324] flex items-center justify-center shadow-lg group-hover:border-[#D4AF37] transition duration-300 mb-3"><span class="text-white font-serif font-bold italic">LL</span></div>
+                            <span class="text-[11px] text-gray-600 font-semibold block truncate px-1">@lyralibero</span>
                         </div>
-
                         <div class="text-center group">
-                            <div class="w-16 h-16 mx-auto rounded-full overflow-hidden border border-white/20 group-hover:border-[#D4AF37] transition duration-300 mb-3 bg-[#0A0F1C]/80 backdrop-blur-md flex items-center justify-center text-white text-xs font-bold shadow-xl">
-                                digilab
-                            </div>
-                            <a href="#" target="_blank" class="text-[11px] text-gray-700 font-semibold hover:text-[#D4AF37] transition block truncate px-1">@digilabagencia</a>
+                            <div class="w-16 h-16 mx-auto rounded-full overflow-hidden border-2 border-white bg-[#0B1324] flex items-center justify-center text-white text-xs font-bold shadow-lg group-hover:border-[#D4AF37] transition duration-300 mb-3">digilab</div>
+                            <span class="text-[11px] text-gray-600 font-semibold block truncate px-1">@digilabagencia</span>
                         </div>
-
                         <div class="text-center group">
-                            <div class="w-16 h-16 mx-auto rounded-full overflow-hidden border border-white/20 group-hover:border-[#D4AF37] transition duration-300 mb-3 bg-[#0A0F1C]/80 backdrop-blur-md flex items-center justify-center shadow-xl">
-                                <span class="text-white font-serif font-bold italic">DB</span>
-                            </div>
-                            <a href="#" target="_blank" class="text-[11px] text-gray-700 font-semibold hover:text-[#D4AF37] transition block truncate px-1">@danibrito</a>
+                            <div class="w-16 h-16 mx-auto rounded-full overflow-hidden border-2 border-white bg-[#0B1324] flex items-center justify-center shadow-lg group-hover:border-[#D4AF37] transition duration-300 mb-3"><span class="text-white font-serif font-bold italic">DB</span></div>
+                            <span class="text-[11px] text-gray-600 font-semibold block truncate px-1">@danibrito</span>
                         </div>
-
                         <div class="text-center group">
-                            <div class="w-16 h-16 mx-auto rounded-full overflow-hidden border border-white/20 group-hover:border-[#D4AF37] transition duration-300 mb-3 bg-[#0A0F1C]/80 backdrop-blur-md flex items-center justify-center font-serif text-white font-bold text-xs shadow-xl">
-                                Glanz
-                            </div>
-                            <a href="glanz.png" target="_blank" class="text-[11px] text-gray-700 font-semibold hover:text-[#D4AF37] transition block truncate px-1">@glanznaturalbeauty</a>
+                            <div class="w-16 h-16 mx-auto rounded-full overflow-hidden border-2 border-white bg-[#0B1324] flex items-center justify-center font-serif text-white font-bold text-xs shadow-lg group-hover:border-[#D4AF37] transition duration-300 mb-3">Glanz</div>
+                            <span class="text-[11px] text-gray-600 font-semibold block truncate px-1">@glanznaturalbeauty</span>
                         </div>
-
                         <div class="text-center group">
-                            <div class="w-16 h-16 mx-auto rounded-full overflow-hidden border border-white/20 group-hover:border-[#D4AF37] transition duration-300 mb-3 bg-[#0A0F1C]/80 backdrop-blur-md flex items-center justify-center shadow-xl">
-                                <span class="text-white font-serif font-bold italic">RE</span>
-                            </div>
-                            <a href="grazi.png" target="_blank" class="text-[11px] text-gray-700 font-semibold hover:text-[#D4AF37] transition block truncate px-1">@grazisa.handmade</a>
+                            <div class="w-16 h-16 mx-auto rounded-full overflow-hidden border-2 border-white bg-[#0B1324] flex items-center justify-center shadow-lg group-hover:border-[#D4AF37] transition duration-300 mb-3"><span class="text-white font-serif font-bold italic">RE</span></div>
+                            <span class="text-[11px] text-gray-600 font-semibold block truncate px-1">@grazisa.handmade</span>
                         </div>
-
                         <div class="text-center group">
-                            <div class="w-16 h-16 mx-auto rounded-full overflow-hidden border border-white/20 group-hover:border-[#D4AF37] transition duration-300 mb-3 bg-[#0A0F1C]/80 backdrop-blur-md flex items-center justify-center text-white font-bold text-[10px] shadow-xl">
-                                Detroit
-                            </div>
-                            <a href="detroit.png" target="_blank" class="text-[11px] text-gray-700 font-semibold hover:text-[#D4AF37] transition block truncate px-1">@detroit.belavista</a>
+                            <div class="w-16 h-16 mx-auto rounded-full overflow-hidden border-2 border-white bg-[#0B1324] flex items-center justify-center text-white font-bold text-[10px] shadow-lg group-hover:border-[#D4AF37] transition duration-300 mb-3">Detroit</div>
+                            <span class="text-[11px] text-gray-600 font-semibold block truncate px-1">@detroit.belavista</span>
                         </div>
-
                     </div>
                 </div>
 
+                <!-- Depoimentos em Grid Fixo (sem carrossel) -->
                 <div>
                     <div class="mb-10">
-                        <span class="text-xs font-bold tracking-[0.2em] text-[#D4AF37] uppercase shadow-sm">Resultados Reais</span>
-                        <h2 class="text-3xl md:text-4xl font-bold text-[#0A0F1C] mt-2">O que dizem <span class="text-gradient italic">sobre nós</span></h2>
+                        <span class="text-xs font-bold tracking-[0.2em] text-[#D4AF37] uppercase">Resultados Reais</span>
+                        <h2 class="text-3xl md:text-4xl font-bold text-[#0B1324] mt-2">O que dizem <span class="text-gradient italic">sobre nós</span></h2>
                     </div>
 
                     <div class="space-y-6">
-                        <div class="bg-[#0A0F1C]/70 backdrop-blur-lg p-8 rounded-2xl border border-white/10 relative hover:border-[#D4AF37]/50 transition-colors duration-300 shadow-2xl">
+                        <!-- Depoimento 1 -->
+                        <div class="bg-white p-8 rounded-2xl border border-gray-200 shadow-xl hover:border-[#D4AF37]/50 transition-all duration-300">
                             <div class="flex gap-1 text-[#D4AF37] mb-4">
-                                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <!-- 5 estrelas -->
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                             </div>
-                            <p class="text-white font-medium italic mb-6 text-sm leading-relaxed">"Desde que contratei a assistência virtual, parei de me preocupar com o operacional e vi o dinheiro cair na conta enquanto eu estava em reunião."</p>
-                            <div class="flex items-center gap-4">
-                                <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white font-bold font-serif border border-white/30">DM</div>
+                            <p class="text-gray-700 font-medium italic mb-6 leading-relaxed">"Desde que contratei a assistência virtual, <strong class="text-[#0B1324]">parei de me preocupar com o operacional e vi o dinheiro cair na conta</strong> enquanto eu estava em reunião."</p>
+                            <div class="flex items-center gap-4 border-t border-gray-100 pt-4">
+                                <div class="w-12 h-12 rounded-full bg-[#1A2B4C] flex items-center justify-center text-white font-bold font-serif text-lg">LS</div>
                                 <div>
-                                    <h4 class="text-white font-bold text-sm">Larissa Santiago</h4>
-                                    <p class="text-[#D4AF37] text-xs uppercase tracking-wider mt-1">Empresária</p>
+                                    <h4 class="text-[#0B1324] font-bold">Larissa Santiago</h4>
+                                    <p class="text-[#D4AF37] text-xs uppercase tracking-wider font-semibold mt-0.5">Empresária</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="bg-[#0A0F1C]/70 backdrop-blur-lg p-8 rounded-2xl border border-white/10 relative hover:border-[#D4AF37]/50 transition-colors duration-300 shadow-2xl">
+                        <!-- Depoimento 2 -->
+                        <div class="bg-white p-8 rounded-2xl border border-gray-200 shadow-xl hover:border-[#D4AF37]/50 transition-all duration-300">
                             <div class="flex gap-1 text-[#D4AF37] mb-4">
-                                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                             </div>
-                            <p class="text-white font-medium italic mb-6 text-sm leading-relaxed">"Desde que contratei a assistência virtual, consegui finalmente descansar. Passei a semana sem precisar abrir o WhatsApp ou o LinkedIn, sabendo que os fechamentos de contratos continuam acontecendo de forma normal e regular."</p>
-                            <div class="flex items-center gap-4">
-                                <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white font-bold font-serif border border-white/30">DR</div>
+                            <p class="text-gray-700 font-medium italic mb-6 leading-relaxed">"Consegui <strong class="text-[#0B1324]">finalmente descansar</strong>. Passei a semana sem abrir WhatsApp ou LinkedIn, e os <strong class="text-[#0B1324]">fechamentos de contratos continuaram acontecendo</strong> de forma normal."</p>
+                            <div class="flex items-center gap-4 border-t border-gray-100 pt-4">
+                                <div class="w-12 h-12 rounded-full bg-[#1A2B4C] flex items-center justify-center text-white font-bold font-serif text-lg">FL</div>
                                 <div>
-                                    <h4 class="text-white font-bold text-sm">Dra Fabricia Lopes</h4>
-                                    <p class="text-[#D4AF37] text-xs uppercase tracking-wider mt-1">Nutricionista</p>
+                                    <h4 class="text-[#0B1324] font-bold">Dra Fabricia Lopes</h4>
+                                    <p class="text-[#D4AF37] text-xs uppercase tracking-wider font-semibold mt-0.5">Nutricionista</p>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-
-    <section id="equipe" class="py-24 bg-[#F8FAFC] border-y border-black/5">
+    <!-- ==================== 6. EQUIPE (Fundo Branco — Máxima Clareza e Conexão) ==================== -->
+    <section id="equipe" class="py-24 bg-white border-y border-gray-100">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-20 space-y-3">
-                <span class="text-xs font-bold tracking-[0.2em] text-gray-500 uppercase">Quem está por trás da MOVARE</span>
-                <h2 class="text-3xl md:text-5xl font-bold text-[#0A0F1C]">A equipe que vai <span class="text-gradient italic">transformar sua operação</span></h2>
-                <p class="text-gray-600 max-w-2xl mx-auto text-lg mt-4">Profissionais especializados e dedicados integralmente ao sucesso do seu negócio.</p>
+                <span class="text-xs font-bold tracking-[0.2em] text-[#D4AF37] uppercase">Quem está por trás da MOVARE</span>
+                <h2 class="text-3xl md:text-5xl font-bold text-[#0B1324]">Especialistas dedicados <span class="text-gradient italic">ao seu resultado</span></h2>
+                <p class="text-gray-500 max-w-2xl mx-auto text-lg mt-4">Um time completo e blindado para o seu negócio.</p>
             </div>
 
             <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-                
+                <!-- Ágatha -->
                 <div class="text-center group">
-                    <div class="w-56 h-56 mx-auto mb-8 rounded-full border-2 border-[#D4AF37]/50 p-2 transition duration-500 group-hover:border-[#D4AF37] shadow-xl">
+                    <div class="w-60 h-60 mx-auto mb-8 rounded-full border-4 border-[#D4AF37]/30 p-2 transition duration-500 group-hover:border-[#D4AF37] group-hover:shadow-2xl shadow-lg">
                         <div class="w-full h-full rounded-full overflow-hidden bg-white flex items-center justify-center">
                             <img src="agatha.jpeg" alt="Ágatha Moreira" class="object-cover w-full h-full transition duration-500 group-hover:scale-110">
                         </div>
                     </div>
-                    <h3 class="text-2xl font-bold text-[#0A0F1C] mb-2">Ágatha Moreira</h3>
-                    <p class="text-[#D4AF37] text-xs font-bold tracking-[0.15em] uppercase mb-4">Fundadora · Processos Administrativos</p>
-                    <p class="text-gray-600 text-sm leading-relaxed px-4">Administradora e pós-graduada em finanças com anos de experiência. Especialista em organizar rotinas, finanças e estruturar as bases para empresas crescerem de forma saudável.</p>
+                    <h3 class="text-2xl font-bold text-[#0B1324] mb-2">Ágatha Moreira</h3>
+                    <p class="text-[#D4AF37] text-xs font-bold tracking-[0.15em] uppercase mb-4">Fundadora · Processos</p>
+                    <p class="text-gray-500 text-sm leading-relaxed px-4">Estrutura seu negócio para crescer com saúde. Administradora e pós-graduada em finanças com 10 anos de experiência.</p>
                 </div>
 
+                <!-- Rafael -->
                 <div class="text-center group">
-                    <div class="w-56 h-56 mx-auto mb-8 rounded-full border-2 border-[#D4AF37]/50 p-2 transition duration-500 group-hover:border-[#D4AF37] shadow-xl">
+                    <div class="w-60 h-60 mx-auto mb-8 rounded-full border-4 border-[#D4AF37]/30 p-2 transition duration-500 group-hover:border-[#D4AF37] group-hover:shadow-2xl shadow-lg">
                         <div class="w-full h-full rounded-full overflow-hidden bg-white flex items-center justify-center">
                             <img src="rafael.png" alt="Rafael Bagano" class="object-cover w-full h-full transition duration-500 group-hover:scale-110">
                         </div>
                     </div>
-                    <h3 class="text-2xl font-bold text-[#0A0F1C] mb-2">Rafael Bagano</h3>
-                    <p class="text-[#D4AF37] text-xs font-bold tracking-[0.15em] uppercase mb-4">Especialista · Experiência do Cliente</p>
-                    <p class="text-gray-600 text-sm leading-relaxed px-4">Responsável pela linha de frente. Atua diretamente no atendimento humanizado e em vendas, garantindo que cada interação reflita os valores e a excelência que seus clientes esperam.</p>
+                    <h3 class="text-2xl font-bold text-[#0B1324] mb-2">Rafael Bagano</h3>
+                    <p class="text-[#D4AF37] text-xs font-bold tracking-[0.15em] uppercase mb-4">Especialista · Experiência</p>
+                    <p class="text-gray-500 text-sm leading-relaxed px-4">Garante que nenhum cliente seu fique sem resposta. Linha de frente em atendimento humanizado e vendas.</p>
                 </div>
 
+                <!-- Time MOVARE -->
                 <div class="text-center group">
-                    <div class="w-56 h-56 mx-auto mb-8 rounded-full border-2 border-[#D4AF37]/50 p-2 transition duration-500 group-hover:border-[#D4AF37] shadow-xl">
-                        <div class="w-full h-full rounded-full overflow-hidden bg-[#131E32] flex items-center justify-center relative">
-                            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80" alt="Time Operacional MOVARE" class="absolute inset-0 object-cover w-full h-full transition duration-500 group-hover:scale-110 opacity-40 mix-blend-overlay">
-                            <svg class="w-16 h-16 text-[#D4AF37] z-10 drop-shadow-md" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    <div class="w-60 h-60 mx-auto mb-8 rounded-full border-4 border-[#D4AF37]/30 p-2 transition duration-500 group-hover:border-[#D4AF37] group-hover:shadow-2xl shadow-lg">
+                        <div class="w-full h-full rounded-full overflow-hidden bg-[#1A2B4C] flex items-center justify-center relative">
+                            <svg class="w-16 h-16 text-[#D4AF37] z-10 drop-shadow-md" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
                         </div>
                     </div>
-                    <h3 class="text-2xl font-bold text-[#0A0F1C] mb-2">Time MOVARE</h3>
+                    <h3 class="text-2xl font-bold text-[#0B1324] mb-2">Time MOVARE</h3>
                     <p class="text-[#D4AF37] text-xs font-bold tracking-[0.15em] uppercase mb-4">Execução Operacional</p>
-                    <p class="text-gray-600 text-sm leading-relaxed px-4">Assistentes rigorosamente selecionadas e treinadas na nossa metodologia. Executam as demandas administrativas diárias com precisão, agilidade e total sigilo.</p>
+                    <p class="text-gray-500 text-sm leading-relaxed px-4">Assistentes treinadas na nossa metodologia. Executam tarefas diárias com precisão, agilidade e total sigilo.</p>
                 </div>
-
             </div>
         </div>
     </section>
-    
-    <section class="fundo-azul-texturizado py-32 text-center border-t border-white/5">
+
+    <!-- ==================== 7. CTA FINAL (Fundo Azul Escuro — Fechamento com Impacto) ==================== -->
+    <section class="bg-deep-blue py-32 text-center border-t border-white/5">
         <div class="max-w-4xl mx-auto px-6 relative z-10">
-            <h2 class="text-4xl md:text-6xl font-bold mb-8 text-white">Pronto para <span class="text-gradient italic">profissionalizar</span> sua gestão?</h2>
-            <p class="text-xl text-gray-400 mb-12 leading-relaxed max-w-2xl mx-auto">Converse com nossa equipe e entenda como a MOVARE pode atuar no seu negócio.</p>
-            <a href="https://wa.me/5571983136600" target="_blank" class="bg-[#D4AF37] text-[#0A0F1C] px-12 py-5 rounded-full font-bold text-lg hover:bg-yellow-500 transition shadow-[0_0_40px_rgba(212,175,55,0.3)] inline-block">Falar com a equipe</a>
+            <h2 class="text-4xl md:text-6xl font-bold mb-8 text-white">
+                Pronto para ter <span class="text-gradient italic">seu tempo de volta?</span>
+            </h2>
+            <p class="text-xl text-gray-300 mb-12 leading-relaxed max-w-2xl mx-auto">
+                Conte sua principal dor operacional em 2 minutos e receba um plano de ação personalizado.
+            </p>
+            <a href="https://wa.me/5571983136600?text=Ol%C3%A1!%20Meu%20perfil%20%C3%A9%20%5BExecutivo%2FPerfumaria%2FMEI%5D%20e%20minha%20maior%20dor%20hoje%20%C3%A9%20%5BOPERACIONAL%2FATENDIMENTO%2FBUROCRACIA%5D.%20Quero%20um%20diagn%C3%B3stico." target="_blank" class="bg-[#D4AF37] text-[#0B1324] px-12 py-5 rounded-full font-bold text-lg hover:bg-yellow-500 transition shadow-[0_0_40px_rgba(212,175,55,0.4)] inline-block hover:-translate-y-1 transform duration-300">
+                Quero um Diagnóstico Gratuito
+            </a>
         </div>
     </section>
 
-<footer class="bg-[#060A14] py-12 border-t border-white/10 text-center text-gray-500 text-sm flex flex-col items-center">
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-[#060A14] py-12 border-t border-white/10 text-center text-gray-500 text-sm flex flex-col items-center">
         <div class="mb-6 flex items-center justify-center gap-8">
-            
             <a href="https://instagram.com/movare.br" target="_blank" class="flex items-center gap-2 hover:text-[#D4AF37] transition text-gray-400 font-semibold tracking-widest uppercase text-xs group">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="transition-transform group-hover:scale-110" viewBox="0 0 16 16">
-                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
-                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="transition-transform group-hover:scale-110" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/></svg>
                 Instagram
             </a>
-
             <a href="https://www.linkedin.com/company/movarebr/?viewAsMember=true" target="_blank" class="flex items-center gap-2 hover:text-[#D4AF37] transition text-gray-400 font-semibold tracking-widest uppercase text-xs group">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="transition-transform group-hover:scale-110" viewBox="0 0 16 16">
-                    <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
-                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="transition-transform group-hover:scale-110" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/></svg>
                 LinkedIn
             </a>
-
         </div>
         <p>© 2026 MOVARE | Assessoria Estratégica. Salvador, Bahia.</p>
     </footer>
+
+    <!-- ==================== BOTÃO FLUTUANTE DO WHATSAPP ==================== -->
+    <a href="https://wa.me/5571983136600?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20assessoria." target="_blank" class="whatsapp-float" aria-label="Fale conosco pelo WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+</body>
+</html>
