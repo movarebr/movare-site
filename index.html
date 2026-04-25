@@ -122,10 +122,10 @@
                     Assessoria virtual especializada para <strong class="text-white">empresários do luxo, executivos e MEIs</strong> que precisam delegar o operacional com total segurança e sigilo.
                 </p>
                 <div class="flex flex-wrap gap-4">
-                    <a href="#perfis" class="bg-[#D4AF37] text-[#0B1324] px-8 py-4 rounded-md font-bold hover:bg-yellow-500 transition shadow-xl shadow-yellow-500/20 text-center">
+                    <a href="#servicos" class="bg-[#D4AF37] text-[#0B1324] px-8 py-4 rounded-md font-bold hover:bg-yellow-500 transition shadow-xl shadow-yellow-500/20 text-center">
                         Quero Delegar Agora
                     </a>
-                    <a href="#perfis" class="border-2 border-white/30 text-white px-8 py-4 rounded-md font-bold hover:bg-white/10 transition text-center backdrop-blur-sm">
+                    <a href="#servicos" class="border-2 border-white/30 text-white px-8 py-4 rounded-md font-bold hover:bg-white/10 transition text-center backdrop-blur-sm">
                         Ver Soluções por Perfil
                     </a>
                 </div>
@@ -214,8 +214,8 @@
         </div>
     </section>
 
-    <!-- ==================== 4. SERVIÇOS — "Escolha Seu Perfil" (Fundo Claro — A Solução) ==================== -->
-    <section id="perfis" class="bg-[#F5F7FA] py-24">
+    <!-- ==================== 4. SERVIÇOS — Cards com Imagens de Fundo Originais (Restauradas) ==================== -->
+    <section id="servicos" class="bg-[#F5F7FA] py-24">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
                 <span class="text-xs font-bold tracking-[0.2em] text-[#D4AF37] uppercase">Qual é o seu momento?</span>
@@ -223,57 +223,64 @@
                 <p class="text-gray-500 max-w-2xl mx-auto">Cada negócio tem uma dor diferente. Clique no seu perfil e descubra a solução sob medida.</p>
             </div>
 
-            <!-- Cards de Perfil (Segmentação Visual) -->
-            <div class="grid lg:grid-cols-3 gap-8">
-                <!-- Card 1: Marcas de Luxo e Perfumaria -->
-                <div class="group bg-white rounded-2xl p-10 shadow-lg border border-gray-100 hover:shadow-2xl hover:-translate-y-2 hover:border-[#D4AF37]/60 transition-all duration-300 flex flex-col text-center">
-                    <div class="w-20 h-20 mx-auto bg-yellow-50 rounded-full flex items-center justify-center mb-8 text-[#D4AF37] group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <!-- Cards com imagens de fundo (RESTAURADAS COMO NO ORIGINAL) -->
+            <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
+                
+                <!-- Card 1: Assessoria Executiva -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-2xl h-full min-h-[550px] flex flex-col justify-end p-8 transition-all duration-300 hover:-translate-y-2 border border-black/10 hover:border-[#D4AF37]/80">
+                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80')] bg-cover bg-center transition-transform duration-700 group-hover:scale-110"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0A0F1C] via-[#0A0F1C]/90 to-[#0A0F1C]/40 group-hover:bg-[#0A0F1C]/80 transition-colors duration-500"></div>
+
+                    <div class="relative z-10 flex flex-col h-full text-left pt-6">
+                        <h4 class="text-2xl font-bold mb-4 text-white">Assessoria Executiva</h4>
+                        <p class="text-gray-400 mb-6 leading-relaxed flex-grow text-sm">Gestão de agenda complexa, suporte administrativo estratégico, organização de ERP e fluxos internos de trabalho.</p>
+                        <ul class="text-sm space-y-3 text-gray-300 font-medium mb-8">
+                            <li><span class="text-[#D4AF37] mr-2">◆</span>Implantação de Processos</li>
+                            <li><span class="text-[#D4AF37] mr-2">◆</span>Gestão de Documentos</li>
+                            <li><span class="text-[#D4AF37] mr-2">◆</span>Suporte à Decisão</li>
+                        </ul>
+                        <a href="https://movarebr.github.io/movare-proposta-assessoria/" target="_blank" class="inline-block mt-auto bg-[#D4AF37] text-[#0A0F1C] px-6 py-3 rounded-md font-bold transition-all duration-300 hover:scale-105 hover:bg-yellow-500 shadow-[0_0_20px_rgba(212,175,55,0.2)] w-max">
+                            Ver Proposta →
+                        </a>
                     </div>
-                    <h3 class="text-2xl font-bold text-[#0B1324] mb-4">Marcas de Luxo & Perfumaria</h3>
-                    <p class="text-gray-500 mb-8 flex-grow leading-relaxed">Para quem não pode errar na experiência do cliente. Atendimento humanizado e braço direito para marcas de excelência.</p>
-                    <ul class="text-left space-y-3 text-gray-600 font-medium mb-10">
-                        <li class="flex items-start gap-3"><span class="text-[#D4AF37] font-bold mt-1">◆</span> Atendimento no WhatsApp</li>
-                        <li class="flex items-start gap-3"><span class="text-[#D4AF37] font-bold mt-1">◆</span> Tradução Sensorial</li>
-                        <li class="flex items-start gap-3"><span class="text-[#D4AF37] font-bold mt-1">◆</span> Recuperação e Pós-venda</li>
-                    </ul>
-                    <a href="https://movarebr.github.io/movare-proposta-perfumaria/" target="_blank" class="w-full bg-[#D4AF37] text-[#0B1324] px-8 py-4 rounded-lg font-bold hover:bg-yellow-500 transition-all duration-300 shadow-lg hover:shadow-yellow-500/30 text-sm uppercase tracking-wider">
-                        Ver Solução para Luxo →
-                    </a>
                 </div>
 
-                <!-- Card 2: Executivos e Empresários -->
-                <div class="group bg-white rounded-2xl p-10 shadow-lg border border-gray-100 hover:shadow-2xl hover:-translate-y-2 hover:border-[#D4AF37]/60 transition-all duration-300 flex flex-col text-center">
-                    <div class="w-20 h-20 mx-auto bg-blue-50 rounded-full flex items-center justify-center mb-8 text-[#1A2B4C] group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                <!-- Card 2: Nicho Perfumaria & Luxo -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-2xl h-full min-h-[550px] flex flex-col justify-end p-8 transition-all duration-300 hover:-translate-y-2 border border-black/10 hover:border-[#D4AF37]/80">
+                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1594035910387-fea47794261f?w=800&q=80')] bg-cover bg-center transition-transform duration-700 group-hover:scale-110"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0A0F1C] via-[#0A0F1C]/90 to-[#0A0F1C]/40 group-hover:bg-[#0A0F1C]/80 transition-colors duration-500"></div>
+
+                    <div class="relative z-10 flex flex-col h-full text-left pt-6">
+                        <h4 class="text-2xl font-bold mb-4 text-white">Nicho: Perfumaria & Luxo</h4>
+                        <p class="text-gray-400 mb-6 leading-relaxed flex-grow text-sm">Atendimento comercial humanizado e braço direito para marcas que prezam pela excelência e experiência do cliente.</p>
+                        <ul class="text-sm space-y-3 text-gray-300 font-medium mb-8">
+                            <li><span class="text-[#D4AF37] mr-2">◆</span>Atendimento no WhatsApp</li>
+                            <li><span class="text-[#D4AF37] mr-2">◆</span>Tradução Sensorial</li>
+                            <li><span class="text-[#D4AF37] mr-2">◆</span>Recuperação e Pós-venda</li>
+                        </ul>
+                        <a href="https://movarebr.github.io/movare-proposta-perfumaria/" target="_blank" class="inline-block mt-auto bg-[#D4AF37] text-[#0A0F1C] px-6 py-3 rounded-md font-bold transition-all duration-300 hover:scale-105 hover:bg-yellow-500 shadow-[0_0_20px_rgba(212,175,55,0.2)] w-max">
+                            Ver Proposta →
+                        </a>
                     </div>
-                    <h3 class="text-2xl font-bold text-[#0B1324] mb-4">Executivos & Empresários</h3>
-                    <p class="text-gray-500 mb-8 flex-grow leading-relaxed">Para quem precisa de um braço direito na gestão. Foco total no estratégico enquanto cuidamos do operacional.</p>
-                    <ul class="text-left space-y-3 text-gray-600 font-medium mb-10">
-                        <li class="flex items-start gap-3"><span class="text-[#D4AF37] font-bold mt-1">◆</span> Implantação de Processos</li>
-                        <li class="flex items-start gap-3"><span class="text-[#D4AF37] font-bold mt-1">◆</span> Gestão de Documentos</li>
-                        <li class="flex items-start gap-3"><span class="text-[#D4AF37] font-bold mt-1">◆</span> Suporte à Decisão</li>
-                    </ul>
-                    <a href="https://movarebr.github.io/movare-proposta-assessoria/" target="_blank" class="w-full bg-[#1A2B4C] text-white px-8 py-4 rounded-lg font-bold hover:bg-[#0B1324] transition-all duration-300 shadow-lg hover:shadow-[#1A2B4C]/30 text-sm uppercase tracking-wider">
-                        Ver Solução Executiva →
-                    </a>
                 </div>
 
-                <!-- Card 3: Autônomos e MEIs -->
-                <div class="group bg-white rounded-2xl p-10 shadow-lg border border-gray-100 hover:shadow-2xl hover:-translate-y-2 hover:border-[#D4AF37]/60 transition-all duration-300 flex flex-col text-center">
-                    <div class="w-20 h-20 mx-auto bg-green-50 rounded-full flex items-center justify-center mb-8 text-green-700 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                <!-- Card 3: Assessoria para MEI -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-2xl h-full min-h-[550px] flex flex-col justify-end p-8 transition-all duration-300 hover:-translate-y-2 border border-black/10 hover:border-[#D4AF37]/80">
+                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80')] bg-cover bg-center transition-transform duration-700 group-hover:scale-110"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0A0F1C] via-[#0A0F1C]/90 to-[#0A0F1C]/40 group-hover:bg-[#0A0F1C]/80 transition-colors duration-500"></div>
+
+                    <div class="relative z-10 flex flex-col h-full text-left pt-6">
+                        <h4 class="text-2xl font-bold mb-4 text-white">Assessoria para MEI</h4>
+                        <p class="text-gray-400 mb-6 leading-relaxed flex-grow text-sm">Suporte completo para autônomos e microempreendedores: Uber, nail designers, cabeleireiros, trancistas e mais.</p>
+                        <ul class="text-sm space-y-3 text-gray-300 font-medium mb-8">
+                            <li><span class="text-[#D4AF37] mr-2">◆</span>Abertura e Fechamento</li>
+                            <li><span class="text-[#D4AF37] mr-2">◆</span>Emissão de Notas Fiscais</li>
+                            <li><span class="text-[#D4AF37] mr-2">◆</span>Regularização e DASN</li>
+                        </ul>
+                        <a href="https://movarebr.github.io/movare-proposta-mei/" target="_blank" class="inline-block mt-auto bg-[#D4AF37] text-[#0A0F1C] px-6 py-3 rounded-md font-bold transition-all duration-300 hover:scale-105 hover:bg-yellow-500 shadow-[0_0_20px_rgba(212,175,55,0.2)] w-max">
+                            Ver Proposta →
+                        </a>
                     </div>
-                    <h3 class="text-2xl font-bold text-[#0B1324] mb-4">Autônomos & MEIs</h3>
-                    <p class="text-gray-500 mb-8 flex-grow leading-relaxed">Para quem trabalha sozinho e odeia a parte fiscal. Simplificamos sua burocracia: Uber, nail designers, trancistas e mais.</p>
-                    <ul class="text-left space-y-3 text-gray-600 font-medium mb-10">
-                        <li class="flex items-start gap-3"><span class="text-[#D4AF37] font-bold mt-1">◆</span> Abertura e Fechamento</li>
-                        <li class="flex items-start gap-3"><span class="text-[#D4AF37] font-bold mt-1">◆</span> Emissão de Notas Fiscais</li>
-                        <li class="flex items-start gap-3"><span class="text-[#D4AF37] font-bold mt-1">◆</span> Regularização e DASN</li>
-                    </ul>
-                    <a href="https://movarebr.github.io/movare-proposta-mei/" target="_blank" class="w-full bg-green-600 text-white px-8 py-4 rounded-lg font-bold hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-green-600/30 text-sm uppercase tracking-wider">
-                        Ver Solução para MEI →
-                    </a>
                 </div>
             </div>
         </div>
@@ -337,7 +344,6 @@
                         <!-- Depoimento 1 -->
                         <div class="bg-white p-8 rounded-2xl border border-gray-200 shadow-xl hover:border-[#D4AF37]/50 transition-all duration-300">
                             <div class="flex gap-1 text-[#D4AF37] mb-4">
-                                <!-- 5 estrelas -->
                                 <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                                 <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                                 <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
@@ -416,7 +422,8 @@
                 <div class="text-center group">
                     <div class="w-60 h-60 mx-auto mb-8 rounded-full border-4 border-[#D4AF37]/30 p-2 transition duration-500 group-hover:border-[#D4AF37] group-hover:shadow-2xl shadow-lg">
                         <div class="w-full h-full rounded-full overflow-hidden bg-[#1A2B4C] flex items-center justify-center relative">
-                            <svg class="w-16 h-16 text-[#D4AF37] z-10 drop-shadow-md" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80" alt="Time Operacional MOVARE" class="absolute inset-0 object-cover w-full h-full transition duration-500 group-hover:scale-110 opacity-40 mix-blend-overlay">
+                            <svg class="w-16 h-16 text-[#D4AF37] z-10 drop-shadow-md" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
                         </div>
                     </div>
                     <h3 class="text-2xl font-bold text-[#0B1324] mb-2">Time MOVARE</h3>
