@@ -34,12 +34,8 @@
         }
 
         /* ========== FUNDOS INTERMEDIÁRIOS (Ritmo Cromático) ========== */
-        .bg-soft-blue {
-            background-color: #E8EEF4;
-        }
-        .bg-lighter-blue {
-            background: linear-gradient(180deg, #F4F7FA 0%, #E8EEF4 100%);
-        }
+        .bg-soft-blue { background-color: #E8EEF4; }
+        .bg-lighter-blue { background: linear-gradient(180deg, #F4F7FA 0%, #E8EEF4 100%); }
 
         /* ========== TEXTO DEGRADÊ DOURADO ========== */
         .text-gradient {
@@ -51,36 +47,36 @@
 
         /* ========== BOTÃO FLUTUANTE DO WHATSAPP ========== */
         .whatsapp-float {
-            position: fixed;
-            bottom: 28px;
-            right: 28px;
-            z-index: 9999;
-            background-color: #25D366;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            position: fixed; bottom: 28px; right: 28px; z-index: 9999;
+            background-color: #25D366; border-radius: 50%;
+            width: 60px; height: 60px;
+            display: flex; align-items: center; justify-content: center;
             box-shadow: 0 8px 24px rgba(37, 211, 102, 0.40);
             transition: transform 0.25s ease, box-shadow 0.25s ease;
             animation: pulse-whatsapp 2s infinite;
         }
-        .whatsapp-float:hover {
-            transform: scale(1.08);
-            box-shadow: 0 12px 32px rgba(37, 211, 102, 0.55);
-            animation: none;
-        }
+        .whatsapp-float:hover { transform: scale(1.08); box-shadow: 0 12px 32px rgba(37, 211, 102, 0.55); animation: none; }
         @keyframes pulse-whatsapp {
             0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.50); }
             70% { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
             100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
+
+        /* ========== FAQ ========== */
+        details > summary { list-style: none; cursor: pointer; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] .faq-icon { transform: rotate(45deg); }
+        .faq-icon { transition: transform 0.3s ease; }
+
+        /* ========== CARROSSEL DE CLIENTES ========== */
+        .marquee { overflow: hidden; position: relative; mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); }
+        .marquee-track { display: flex; gap: 1.5rem; width: max-content; animation: scroll 40s linear infinite; }
+        @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- ==================== HEADER (Limpo e Claro) ==================== -->
+    <!-- ==================== HEADER (Simplificado) ==================== -->
     <header class="bg-white shadow-md sticky top-0 z-50">
         <nav class="flex justify-between items-center px-6 py-3 max-w-7xl mx-auto">
             <a href="#" class="flex items-center">
@@ -88,28 +84,19 @@
             </a>
 
             <div class="hidden md:flex space-x-8 text-sm font-semibold uppercase tracking-widest text-[#0B1324] items-center">
-                <div class="relative group py-2">
-                    <button class="hover:text-[#D4AF37] transition flex items-center gap-1 outline-none cursor-pointer">
-                        Sobre
-                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <div class="absolute left-0 mt-2 w-56 bg-white border border-gray-100 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                        <a href="#sobre" class="block px-6 py-3 text-gray-700 hover:bg-gray-50 hover:text-[#D4AF37] border-b border-gray-100 transition rounded-t-lg font-medium">Nossa Trajetória</a>
-                        <a href="#equipe" class="block px-6 py-3 text-gray-700 hover:bg-gray-50 hover:text-[#D4AF37] transition rounded-b-lg font-medium">Equipe</a>
-                    </div>
-                </div>
                 <a href="#servicos" class="hover:text-[#D4AF37] transition py-2">Soluções</a>
-                <a href="#resultados" class="hover:text-[#D4AF37] transition py-2">Clientes</a>
-                <a href="https://instagram.com/movare.br" target="_blank" class="hover:text-[#D4AF37] transition py-2">Instagram</a>
+                <a href="#resultados" class="hover:text-[#D4AF37] transition py-2">Resultados</a>
+                <a href="#sobre" class="hover:text-[#D4AF37] transition py-2">Sobre</a>
+                <a href="#faq" class="hover:text-[#D4AF37] transition py-2">FAQ</a>
             </div>
 
-            <a href="https://wa.me/5571983136600" target="_blank" class="bg-[#D4AF37] text-[#0B1324] px-6 py-2.5 rounded-full text-sm font-bold hover:bg-yellow-500 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 shadow-md">
+            <a href="https://wa.me/5571983136600?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20MOVARE%20e%20quero%20falar%20com%20a%20equipe." target="_blank" class="bg-[#D4AF37] text-[#0B1324] px-6 py-2.5 rounded-full text-sm font-bold hover:bg-yellow-500 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 shadow-md">
                 Falar com a equipe
             </a>
         </nav>
     </header>
 
-    <!-- ==================== 1. HERO (Fundo Azul Escuro — O Problema) ==================== -->
+    <!-- ==================== 1. HERO ==================== -->
     <section class="bg-deep-blue min-h-[90vh] flex items-center">
         <div class="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center w-full">
             <div class="md:w-1/2 text-left">
@@ -125,8 +112,8 @@
                     <a href="#servicos" class="bg-[#D4AF37] text-[#0B1324] px-8 py-4 rounded-md font-bold hover:bg-yellow-500 transition shadow-xl shadow-yellow-500/20 text-center">
                         Quero Delegar Agora
                     </a>
-                    <a href="#servicos" class="border-2 border-white/30 text-white px-8 py-4 rounded-md font-bold hover:bg-white/10 transition text-center backdrop-blur-sm">
-                        Ver Soluções por Perfil
+                    <a href="#como-funciona" class="border-2 border-white/30 text-white px-8 py-4 rounded-md font-bold hover:bg-white/10 transition text-center backdrop-blur-sm">
+                        Como funciona
                     </a>
                 </div>
             </div>
@@ -134,35 +121,33 @@
             <div class="md:w-1/2 mt-16 md:mt-0 flex justify-end relative">
                 <div class="w-80 h-[500px] bg-[#131E32] rounded-2xl shadow-2xl border border-white/10 relative overflow-hidden group">
                     <div class="absolute inset-0 bg-gradient-to-tr from-[#1A2B4C] to-transparent opacity-30 z-10 pointer-events-none rounded-2xl"></div>
-                    <img src="juntos.jpeg"
-                         alt="Ágatha - Equipe MOVARE"
-                         class="absolute inset-0 w-full h-full object-cover rounded-2xl transition-transform duration-700 ease-out group-hover:scale-110 z-0">
+                    <img src="juntos.jpeg" alt="Ágatha - Equipe MOVARE" class="absolute inset-0 w-full h-full object-cover rounded-2xl transition-transform duration-700 ease-out group-hover:scale-110 z-0">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ==================== 2. NÚMEROS (Fundo Azul Suave — Transição) ==================== -->
+    <!-- ==================== 2. NÚMEROS (Métricas emocionais) ==================== -->
     <section id="sobre" class="bg-soft-blue py-20 border-y border-white/30">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-3 gap-12 text-center">
                 <div class="space-y-2">
+                    <h3 class="text-4xl font-extrabold text-[#0B1324]">+ 80 negócios</h3>
+                    <p class="text-[#0B1324]/70 uppercase text-xs tracking-widest font-bold">Liberados do operacional</p>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="text-4xl font-extrabold text-[#0B1324]">+ 4.000 horas</h3>
+                    <p class="text-[#0B1324]/70 uppercase text-xs tracking-widest font-bold">Devolvidas aos nossos clientes</p>
+                </div>
+                <div class="space-y-2">
                     <h3 class="text-4xl font-extrabold text-[#0B1324]">+ 6 anos</h3>
-                    <p class="text-[#0B1324]/70 uppercase text-xs tracking-widest font-bold">Atuação no mercado</p>
-                </div>
-                <div class="space-y-2">
-                    <h3 class="text-4xl font-extrabold text-[#0B1324]">+ 80 clientes</h3>
-                    <p class="text-[#0B1324]/70 uppercase text-xs tracking-widest font-bold">Na Europa e América</p>
-                </div>
-                <div class="space-y-2">
-                    <h3 class="text-4xl font-extrabold text-[#0B1324]">100% online</h3>
-                    <p class="text-[#0B1324]/70 uppercase text-xs tracking-widest font-bold">Atuação Remota</p>
+                    <p class="text-[#0B1324]/70 uppercase text-xs tracking-widest font-bold">Estruturando negócios remotamente</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ==================== 3. SOBRE A EMPRESA (Fundo Branco — Clareza Total) ==================== -->
+    <!-- ==================== 3. SOBRE A EMPRESA ==================== -->
     <section class="bg-white py-24">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
@@ -172,7 +157,6 @@
             </div>
 
             <div class="grid md:grid-cols-2 gap-10">
-                <!-- Card Trajetória -->
                 <div class="bg-[#F8FAFC] p-10 rounded-2xl border border-gray-200 hover:border-[#D4AF37]/60 hover:shadow-xl transition-all duration-300 relative overflow-hidden group">
                     <div class="w-14 h-14 bg-[#0B1324] rounded-xl flex items-center justify-center mb-8 text-[#D4AF37]">
                         <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
@@ -186,7 +170,6 @@
                     </p>
                 </div>
 
-                <!-- Card LGPD -->
                 <div class="bg-[#F8FAFC] p-10 rounded-2xl border border-gray-200 hover:border-[#D4AF37]/60 hover:shadow-xl transition-all duration-300 relative overflow-hidden group flex flex-col justify-between">
                     <div>
                         <div class="w-14 h-14 bg-[#0B1324] rounded-xl flex items-center justify-center mb-8 text-[#D4AF37]">
@@ -205,7 +188,6 @@
                     <p class="text-gray-600 leading-relaxed">
                         <strong class="text-[#0B1324]">Equipe altamente treinada e certificada</strong> pela LGPD, atuamos com total sigilo com as informações de nossos clientes, buscando sempre a excelência nos resultados.
                     </p>
-                    <!-- Selo de Confiança Visual -->
                     <div class="mt-4 inline-flex items-center gap-2 bg-green-50 text-green-800 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider border border-green-200">
                         <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span> Conformidade LGPD · Sigilo Garantido
                     </div>
@@ -214,7 +196,65 @@
         </div>
     </section>
 
-    <!-- ==================== 4. SERVIÇOS — Cards com Imagens de Fundo Originais (Restauradas) ==================== -->
+    <!-- ==================== 4. COMO FUNCIONA (NOVA SEÇÃO) ==================== -->
+    <section id="como-funciona" class="bg-white py-24 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-xs font-bold tracking-[0.2em] text-[#D4AF37] uppercase">O caminho até liberar suas horas</span>
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 text-[#0B1324] mt-2">Como <span class="text-gradient italic">funciona</span></h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">Do primeiro contato à execução: 4 passos simples, sem mistério.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+                <!-- Step 1 -->
+                <div class="bg-[#F8FAFC] p-8 rounded-2xl border border-gray-200 hover:border-[#D4AF37]/60 hover:shadow-xl transition-all duration-300 relative">
+                    <div class="absolute -top-4 -left-2 text-7xl font-extrabold text-[#D4AF37]/15 select-none leading-none">01</div>
+                    <div class="relative">
+                        <div class="w-12 h-12 bg-[#0B1324] rounded-xl flex items-center justify-center mb-6 text-[#D4AF37]">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#0B1324] mb-2">Diagnóstico</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">Conversa de 30 min para entender suas dores operacionais e gargalos.</p>
+                    </div>
+                </div>
+                <!-- Step 2 -->
+                <div class="bg-[#F8FAFC] p-8 rounded-2xl border border-gray-200 hover:border-[#D4AF37]/60 hover:shadow-xl transition-all duration-300 relative">
+                    <div class="absolute -top-4 -left-2 text-7xl font-extrabold text-[#D4AF37]/15 select-none leading-none">02</div>
+                    <div class="relative">
+                        <div class="w-12 h-12 bg-[#0B1324] rounded-xl flex items-center justify-center mb-6 text-[#D4AF37]">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#0B1324] mb-2">Proposta</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">Plano sob medida com escopo, horas mensais e investimento claro.</p>
+                    </div>
+                </div>
+                <!-- Step 3 -->
+                <div class="bg-[#F8FAFC] p-8 rounded-2xl border border-gray-200 hover:border-[#D4AF37]/60 hover:shadow-xl transition-all duration-300 relative">
+                    <div class="absolute -top-4 -left-2 text-7xl font-extrabold text-[#D4AF37]/15 select-none leading-none">03</div>
+                    <div class="relative">
+                        <div class="w-12 h-12 bg-[#0B1324] rounded-xl flex items-center justify-center mb-6 text-[#D4AF37]">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#0B1324] mb-2">Onboarding</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">Assinamos NDA, mapeamos acessos e organizamos seus processos.</p>
+                    </div>
+                </div>
+                <!-- Step 4 -->
+                <div class="bg-[#F8FAFC] p-8 rounded-2xl border border-gray-200 hover:border-[#D4AF37]/60 hover:shadow-xl transition-all duration-300 relative">
+                    <div class="absolute -top-4 -left-2 text-7xl font-extrabold text-[#D4AF37]/15 select-none leading-none">04</div>
+                    <div class="relative">
+                        <div class="w-12 h-12 bg-[#0B1324] rounded-xl flex items-center justify-center mb-6 text-[#D4AF37]">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#0B1324] mb-2">Execução</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">Sua assistente entra em ação. Você recebe relatórios semanais.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 5. SERVIÇOS ==================== -->
     <section id="servicos" class="bg-[#F5F7FA] py-24">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
@@ -223,14 +263,10 @@
                 <p class="text-gray-500 max-w-2xl mx-auto">Cada negócio tem uma dor diferente. Clique no seu perfil e descubra a solução sob medida.</p>
             </div>
 
-            <!-- Cards com imagens de fundo (RESTAURADAS COMO NO ORIGINAL) -->
             <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
-                
-                <!-- Card 1: Assessoria Executiva -->
                 <div class="group relative rounded-2xl overflow-hidden shadow-2xl h-full min-h-[550px] flex flex-col justify-end p-8 transition-all duration-300 hover:-translate-y-2 border border-black/10 hover:border-[#D4AF37]/80">
                     <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80')] bg-cover bg-center transition-transform duration-700 group-hover:scale-110"></div>
                     <div class="absolute inset-0 bg-gradient-to-t from-[#0A0F1C] via-[#0A0F1C]/90 to-[#0A0F1C]/40 group-hover:bg-[#0A0F1C]/80 transition-colors duration-500"></div>
-
                     <div class="relative z-10 flex flex-col h-full text-left pt-6">
                         <h4 class="text-2xl font-bold mb-4 text-white">Assessoria Executiva</h4>
                         <p class="text-gray-400 mb-6 leading-relaxed flex-grow text-sm">Gestão de agenda complexa, suporte administrativo estratégico, organização de ERP e fluxos internos de trabalho.</p>
@@ -239,17 +275,13 @@
                             <li><span class="text-[#D4AF37] mr-2">◆</span>Gestão de Documentos</li>
                             <li><span class="text-[#D4AF37] mr-2">◆</span>Suporte à Decisão</li>
                         </ul>
-                        <a href="https://movarebr.github.io/movare-proposta-assessoria/" target="_blank" class="inline-block mt-auto bg-[#D4AF37] text-[#0A0F1C] px-6 py-3 rounded-md font-bold transition-all duration-300 hover:scale-105 hover:bg-yellow-500 shadow-[0_0_20px_rgba(212,175,55,0.2)] w-max">
-                            Ver Proposta →
-                        </a>
+                        <a href="https://movarebr.github.io/movare-proposta-assessoria/" target="_blank" class="inline-block mt-auto bg-[#D4AF37] text-[#0A0F1C] px-6 py-3 rounded-md font-bold transition-all duration-300 hover:scale-105 hover:bg-yellow-500 shadow-[0_0_20px_rgba(212,175,55,0.2)] w-max">Ver Proposta →</a>
                     </div>
                 </div>
 
-                <!-- Card 2: Nicho Perfumaria & Luxo -->
                 <div class="group relative rounded-2xl overflow-hidden shadow-2xl h-full min-h-[550px] flex flex-col justify-end p-8 transition-all duration-300 hover:-translate-y-2 border border-black/10 hover:border-[#D4AF37]/80">
                     <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1594035910387-fea47794261f?w=800&q=80')] bg-cover bg-center transition-transform duration-700 group-hover:scale-110"></div>
                     <div class="absolute inset-0 bg-gradient-to-t from-[#0A0F1C] via-[#0A0F1C]/90 to-[#0A0F1C]/40 group-hover:bg-[#0A0F1C]/80 transition-colors duration-500"></div>
-
                     <div class="relative z-10 flex flex-col h-full text-left pt-6">
                         <h4 class="text-2xl font-bold mb-4 text-white">Nicho: Perfumaria & Luxo</h4>
                         <p class="text-gray-400 mb-6 leading-relaxed flex-grow text-sm">Atendimento comercial humanizado e braço direito para marcas que prezam pela excelência e experiência do cliente.</p>
@@ -258,17 +290,13 @@
                             <li><span class="text-[#D4AF37] mr-2">◆</span>Tradução Sensorial</li>
                             <li><span class="text-[#D4AF37] mr-2">◆</span>Recuperação e Pós-venda</li>
                         </ul>
-                        <a href="https://movarebr.github.io/movare-proposta-perfumaria/" target="_blank" class="inline-block mt-auto bg-[#D4AF37] text-[#0A0F1C] px-6 py-3 rounded-md font-bold transition-all duration-300 hover:scale-105 hover:bg-yellow-500 shadow-[0_0_20px_rgba(212,175,55,0.2)] w-max">
-                            Ver Proposta →
-                        </a>
+                        <a href="https://movarebr.github.io/movare-proposta-perfumaria/" target="_blank" class="inline-block mt-auto bg-[#D4AF37] text-[#0A0F1C] px-6 py-3 rounded-md font-bold transition-all duration-300 hover:scale-105 hover:bg-yellow-500 shadow-[0_0_20px_rgba(212,175,55,0.2)] w-max">Ver Proposta →</a>
                     </div>
                 </div>
 
-                <!-- Card 3: Assessoria para MEI -->
                 <div class="group relative rounded-2xl overflow-hidden shadow-2xl h-full min-h-[550px] flex flex-col justify-end p-8 transition-all duration-300 hover:-translate-y-2 border border-black/10 hover:border-[#D4AF37]/80">
                     <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80')] bg-cover bg-center transition-transform duration-700 group-hover:scale-110"></div>
                     <div class="absolute inset-0 bg-gradient-to-t from-[#0A0F1C] via-[#0A0F1C]/90 to-[#0A0F1C]/40 group-hover:bg-[#0A0F1C]/80 transition-colors duration-500"></div>
-
                     <div class="relative z-10 flex flex-col h-full text-left pt-6">
                         <h4 class="text-2xl font-bold mb-4 text-white">Assessoria para MEI</h4>
                         <p class="text-gray-400 mb-6 leading-relaxed flex-grow text-sm">Suporte completo para autônomos e microempreendedores: Uber, nail designers, cabeleireiros, trancistas e mais.</p>
@@ -277,105 +305,231 @@
                             <li><span class="text-[#D4AF37] mr-2">◆</span>Emissão de Notas Fiscais</li>
                             <li><span class="text-[#D4AF37] mr-2">◆</span>Regularização e DASN</li>
                         </ul>
-                        <a href="https://movarebr.github.io/movare-proposta-mei/" target="_blank" class="inline-block mt-auto bg-[#D4AF37] text-[#0A0F1C] px-6 py-3 rounded-md font-bold transition-all duration-300 hover:scale-105 hover:bg-yellow-500 shadow-[0_0_20px_rgba(212,175,55,0.2)] w-max">
-                            Ver Proposta →
-                        </a>
+                        <a href="https://movarebr.github.io/movare-proposta-mei/" target="_blank" class="inline-block mt-auto bg-[#D4AF37] text-[#0A0F1C] px-6 py-3 rounded-md font-bold transition-all duration-300 hover:scale-105 hover:bg-yellow-500 shadow-[0_0_20px_rgba(212,175,55,0.2)] w-max">Ver Proposta →</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ==================== 5. RESULTADOS REAIS (Fundo Lilás Claro — Acolhimento e Prova Social) ==================== -->
+    <!-- ==================== 6. NICHOS ATENDIDOS (NOVA SEÇÃO) ==================== -->
+    <section class="bg-white py-20 border-y border-gray-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-xs font-bold tracking-[0.2em] text-[#D4AF37] uppercase">Amplitude de atuação</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-[#0B1324] mt-2">Segmentos que <span class="text-gradient italic">já atendemos</span></h2>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4">
+                <!-- Cada nicho -->
+                <div class="flex flex-col items-center text-center p-4 rounded-xl border border-gray-100 hover:border-[#D4AF37]/60 hover:shadow-md transition">
+                    <svg class="w-8 h-8 text-[#D4AF37] mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+                    <span class="text-xs font-bold text-[#0B1324]">E-commerce</span>
+                </div>
+                <div class="flex flex-col items-center text-center p-4 rounded-xl border border-gray-100 hover:border-[#D4AF37]/60 hover:shadow-md transition">
+                    <svg class="w-8 h-8 text-[#D4AF37] mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                    <span class="text-xs font-bold text-[#0B1324]">Estética</span>
+                </div>
+                <div class="flex flex-col items-center text-center p-4 rounded-xl border border-gray-100 hover:border-[#D4AF37]/60 hover:shadow-md transition">
+                    <svg class="w-8 h-8 text-[#D4AF37] mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293A1 1 0 005.414 17H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                    <span class="text-xs font-bold text-[#0B1324]">Gastronomia</span>
+                </div>
+                <div class="flex flex-col items-center text-center p-4 rounded-xl border border-gray-100 hover:border-[#D4AF37]/60 hover:shadow-md transition">
+                    <svg class="w-8 h-8 text-[#D4AF37] mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    <span class="text-xs font-bold text-[#0B1324]">Fotografia</span>
+                </div>
+                <div class="flex flex-col items-center text-center p-4 rounded-xl border border-gray-100 hover:border-[#D4AF37]/60 hover:shadow-md transition">
+                    <svg class="w-8 h-8 text-[#D4AF37] mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342"/></svg>
+                    <span class="text-xs font-bold text-[#0B1324]">Educação</span>
+                </div>
+                <div class="flex flex-col items-center text-center p-4 rounded-xl border border-gray-100 hover:border-[#D4AF37]/60 hover:shadow-md transition">
+                    <svg class="w-8 h-8 text-[#D4AF37] mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 18v-6a9 9 0 0118 0v6M3 18a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3M21 18a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3"/></svg>
+                    <span class="text-xs font-bold text-[#0B1324]">Saúde</span>
+                </div>
+                <div class="flex flex-col items-center text-center p-4 rounded-xl border border-gray-100 hover:border-[#D4AF37]/60 hover:shadow-md transition">
+                    <svg class="w-8 h-8 text-[#D4AF37] mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    <span class="text-xs font-bold text-[#0B1324]">Jurídico</span>
+                </div>
+                <div class="flex flex-col items-center text-center p-4 rounded-xl border border-gray-100 hover:border-[#D4AF37]/60 hover:shadow-md transition">
+                    <svg class="w-8 h-8 text-[#D4AF37] mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <span class="text-xs font-bold text-[#0B1324]">Consultoria</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 7. RESULTADOS — Clientes (com contexto) + Depoimentos por nicho ==================== -->
     <section id="resultados" class="bg-lighter-blue py-24 border-y border-black/5">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-16 items-start">
-                <!-- Marcas que Movemos -->
-                <div>
-                    <div class="mb-10">
-                        <span class="text-xs font-bold tracking-[0.2em] text-[#D4AF37] uppercase">Parcerias de Sucesso</span>
-                        <h2 class="text-3xl md:text-4xl font-bold text-[#0B1324] mt-2">Marcas que <span class="text-gradient italic">movemos</span></h2>
-                    </div>
-                    <div class="grid grid-cols-3 sm:grid-cols-4 gap-y-8 gap-x-4">
-                        <!-- Mesmos clientes, mantidos -->
-                        <div class="text-center group">
-                            <div class="w-16 h-16 mx-auto rounded-full overflow-hidden border-2 border-white bg-[#0B1324] flex items-center justify-center shadow-lg group-hover:border-[#D4AF37] transition duration-300 mb-3"><span class="text-white font-serif font-bold italic">YF</span></div>
-                            <span class="text-[11px] text-gray-600 font-semibold block truncate px-1">@yasminfernandesnutri</span>
+
+            <!-- Clientes -->
+            <div class="mb-20">
+                <div class="text-center mb-10">
+                    <span class="text-xs font-bold tracking-[0.2em] text-[#D4AF37] uppercase">Parcerias de Sucesso</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#0B1324] mt-2">Marcas que <span class="text-gradient italic">movemos</span></h2>
+                </div>
+
+                <!-- Carrossel com contexto: nome — segmento · cidade -->
+                <div class="marquee">
+                    <div class="marquee-track">
+                        <!-- Set 1 -->
+                        <div class="flex-shrink-0 bg-white border border-gray-200 rounded-xl px-6 py-4 shadow-sm flex items-center gap-3 min-w-[280px]">
+                            <div class="w-10 h-10 rounded-full bg-[#0B1324] flex items-center justify-center text-white font-serif font-bold italic text-sm flex-shrink-0">YF</div>
+                            <div class="text-left">
+                                <p class="text-sm font-bold text-[#0B1324]">@yasminfernandesnutri</p>
+                                <p class="text-xs text-gray-500">Nutrição · Rio de Janeiro</p>
+                            </div>
                         </div>
-                        <div class="text-center group">
-                            <div class="w-16 h-16 mx-auto rounded-full overflow-hidden border-2 border-white bg-[#0B1324] flex items-center justify-center shadow-lg group-hover:border-[#D4AF37] transition duration-300 mb-3"><span class="text-white font-serif font-bold italic">BC</span></div>
-                            <span class="text-[11px] text-gray-600 font-semibold block truncate px-1">@beatrizcassane</span>
+                        <div class="flex-shrink-0 bg-white border border-gray-200 rounded-xl px-6 py-4 shadow-sm flex items-center gap-3 min-w-[280px]">
+                            <div class="w-10 h-10 rounded-full bg-[#0B1324] flex items-center justify-center text-white font-serif font-bold italic text-sm flex-shrink-0">BC</div>
+                            <div class="text-left">
+                                <p class="text-sm font-bold text-[#0B1324]">@beatrizcassane</p>
+                                <p class="text-xs text-gray-500">Estética · São Paulo</p>
+                            </div>
                         </div>
-                        <div class="text-center group">
-                            <div class="w-16 h-16 mx-auto rounded-full overflow-hidden border-2 border-white bg-[#0B1324] flex items-center justify-center shadow-lg group-hover:border-[#D4AF37] transition duration-300 mb-3"><span class="text-white font-serif font-bold italic">LL</span></div>
-                            <span class="text-[11px] text-gray-600 font-semibold block truncate px-1">@lyralibero</span>
+                        <div class="flex-shrink-0 bg-white border border-gray-200 rounded-xl px-6 py-4 shadow-sm flex items-center gap-3 min-w-[280px]">
+                            <div class="w-10 h-10 rounded-full bg-[#0B1324] flex items-center justify-center text-white font-serif font-bold italic text-sm flex-shrink-0">LL</div>
+                            <div class="text-left">
+                                <p class="text-sm font-bold text-[#0B1324]">@lyralibero</p>
+                                <p class="text-xs text-gray-500">Perfumaria de Luxo · Lisboa</p>
+                            </div>
                         </div>
-                        <div class="text-center group">
-                            <div class="w-16 h-16 mx-auto rounded-full overflow-hidden border-2 border-white bg-[#0B1324] flex items-center justify-center text-white text-xs font-bold shadow-lg group-hover:border-[#D4AF37] transition duration-300 mb-3">digilab</div>
-                            <span class="text-[11px] text-gray-600 font-semibold block truncate px-1">@digilabagencia</span>
+                        <div class="flex-shrink-0 bg-white border border-gray-200 rounded-xl px-6 py-4 shadow-sm flex items-center gap-3 min-w-[280px]">
+                            <div class="w-10 h-10 rounded-full bg-[#0B1324] flex items-center justify-center text-white font-bold text-[10px] flex-shrink-0">digilab</div>
+                            <div class="text-left">
+                                <p class="text-sm font-bold text-[#0B1324]">@digilabagencia</p>
+                                <p class="text-xs text-gray-500">Marketing Digital · Salvador</p>
+                            </div>
                         </div>
-                        <div class="text-center group">
-                            <div class="w-16 h-16 mx-auto rounded-full overflow-hidden border-2 border-white bg-[#0B1324] flex items-center justify-center shadow-lg group-hover:border-[#D4AF37] transition duration-300 mb-3"><span class="text-white font-serif font-bold italic">DB</span></div>
-                            <span class="text-[11px] text-gray-600 font-semibold block truncate px-1">@danibrito</span>
+                        <div class="flex-shrink-0 bg-white border border-gray-200 rounded-xl px-6 py-4 shadow-sm flex items-center gap-3 min-w-[280px]">
+                            <div class="w-10 h-10 rounded-full bg-[#0B1324] flex items-center justify-center text-white font-serif font-bold italic text-sm flex-shrink-0">DB</div>
+                            <div class="text-left">
+                                <p class="text-sm font-bold text-[#0B1324]">@danibrito</p>
+                                <p class="text-xs text-gray-500">Consultoria Executiva · São Paulo</p>
+                            </div>
                         </div>
-                        <div class="text-center group">
-                            <div class="w-16 h-16 mx-auto rounded-full overflow-hidden border-2 border-white bg-[#0B1324] flex items-center justify-center font-serif text-white font-bold text-xs shadow-lg group-hover:border-[#D4AF37] transition duration-300 mb-3">Glanz</div>
-                            <span class="text-[11px] text-gray-600 font-semibold block truncate px-1">@glanznaturalbeauty</span>
+                        <div class="flex-shrink-0 bg-white border border-gray-200 rounded-xl px-6 py-4 shadow-sm flex items-center gap-3 min-w-[280px]">
+                            <div class="w-10 h-10 rounded-full bg-[#0B1324] flex items-center justify-center text-white font-serif font-bold text-[10px] flex-shrink-0">Glanz</div>
+                            <div class="text-left">
+                                <p class="text-sm font-bold text-[#0B1324]">@glanznaturalbeauty</p>
+                                <p class="text-xs text-gray-500">Cosmética Natural · Porto</p>
+                            </div>
                         </div>
-                        <div class="text-center group">
-                            <div class="w-16 h-16 mx-auto rounded-full overflow-hidden border-2 border-white bg-[#0B1324] flex items-center justify-center shadow-lg group-hover:border-[#D4AF37] transition duration-300 mb-3"><span class="text-white font-serif font-bold italic">RE</span></div>
-                            <span class="text-[11px] text-gray-600 font-semibold block truncate px-1">@grazisa.handmade</span>
+                        <div class="flex-shrink-0 bg-white border border-gray-200 rounded-xl px-6 py-4 shadow-sm flex items-center gap-3 min-w-[280px]">
+                            <div class="w-10 h-10 rounded-full bg-[#0B1324] flex items-center justify-center text-white font-serif font-bold italic text-sm flex-shrink-0">GH</div>
+                            <div class="text-left">
+                                <p class="text-sm font-bold text-[#0B1324]">@grazisa.handmade</p>
+                                <p class="text-xs text-gray-500">Artesanato Premium · Salvador</p>
+                            </div>
                         </div>
-                        <div class="text-center group">
-                            <div class="w-16 h-16 mx-auto rounded-full overflow-hidden border-2 border-white bg-[#0B1324] flex items-center justify-center text-white font-bold text-[10px] shadow-lg group-hover:border-[#D4AF37] transition duration-300 mb-3">Detroit</div>
-                            <span class="text-[11px] text-gray-600 font-semibold block truncate px-1">@detroit.belavista</span>
+                        <div class="flex-shrink-0 bg-white border border-gray-200 rounded-xl px-6 py-4 shadow-sm flex items-center gap-3 min-w-[280px]">
+                            <div class="w-10 h-10 rounded-full bg-[#0B1324] flex items-center justify-center text-white font-bold text-[10px] flex-shrink-0">Detroit</div>
+                            <div class="text-left">
+                                <p class="text-sm font-bold text-[#0B1324]">@detroit.belavista</p>
+                                <p class="text-xs text-gray-500">Gastronomia · São Paulo</p>
+                            </div>
+                        </div>
+                        <!-- Set 2 (duplicado para loop infinito) -->
+                        <div class="flex-shrink-0 bg-white border border-gray-200 rounded-xl px-6 py-4 shadow-sm flex items-center gap-3 min-w-[280px]">
+                            <div class="w-10 h-10 rounded-full bg-[#0B1324] flex items-center justify-center text-white font-serif font-bold italic text-sm flex-shrink-0">YF</div>
+                            <div class="text-left"><p class="text-sm font-bold text-[#0B1324]">@yasminfernandesnutri</p><p class="text-xs text-gray-500">Nutrição · Rio de Janeiro</p></div>
+                        </div>
+                        <div class="flex-shrink-0 bg-white border border-gray-200 rounded-xl px-6 py-4 shadow-sm flex items-center gap-3 min-w-[280px]">
+                            <div class="w-10 h-10 rounded-full bg-[#0B1324] flex items-center justify-center text-white font-serif font-bold italic text-sm flex-shrink-0">BC</div>
+                            <div class="text-left"><p class="text-sm font-bold text-[#0B1324]">@beatrizcassane</p><p class="text-xs text-gray-500">Estética · São Paulo</p></div>
+                        </div>
+                        <div class="flex-shrink-0 bg-white border border-gray-200 rounded-xl px-6 py-4 shadow-sm flex items-center gap-3 min-w-[280px]">
+                            <div class="w-10 h-10 rounded-full bg-[#0B1324] flex items-center justify-center text-white font-serif font-bold italic text-sm flex-shrink-0">LL</div>
+                            <div class="text-left"><p class="text-sm font-bold text-[#0B1324]">@lyralibero</p><p class="text-xs text-gray-500">Perfumaria de Luxo · Lisboa</p></div>
+                        </div>
+                        <div class="flex-shrink-0 bg-white border border-gray-200 rounded-xl px-6 py-4 shadow-sm flex items-center gap-3 min-w-[280px]">
+                            <div class="w-10 h-10 rounded-full bg-[#0B1324] flex items-center justify-center text-white font-bold text-[10px] flex-shrink-0">digilab</div>
+                            <div class="text-left"><p class="text-sm font-bold text-[#0B1324]">@digilabagencia</p><p class="text-xs text-gray-500">Marketing Digital · Salvador</p></div>
+                        </div>
+                        <div class="flex-shrink-0 bg-white border border-gray-200 rounded-xl px-6 py-4 shadow-sm flex items-center gap-3 min-w-[280px]">
+                            <div class="w-10 h-10 rounded-full bg-[#0B1324] flex items-center justify-center text-white font-serif font-bold italic text-sm flex-shrink-0">DB</div>
+                            <div class="text-left"><p class="text-sm font-bold text-[#0B1324]">@danibrito</p><p class="text-xs text-gray-500">Consultoria Executiva · São Paulo</p></div>
+                        </div>
+                        <div class="flex-shrink-0 bg-white border border-gray-200 rounded-xl px-6 py-4 shadow-sm flex items-center gap-3 min-w-[280px]">
+                            <div class="w-10 h-10 rounded-full bg-[#0B1324] flex items-center justify-center text-white font-serif font-bold text-[10px] flex-shrink-0">Glanz</div>
+                            <div class="text-left"><p class="text-sm font-bold text-[#0B1324]">@glanznaturalbeauty</p><p class="text-xs text-gray-500">Cosmética Natural · Porto</p></div>
+                        </div>
+                        <div class="flex-shrink-0 bg-white border border-gray-200 rounded-xl px-6 py-4 shadow-sm flex items-center gap-3 min-w-[280px]">
+                            <div class="w-10 h-10 rounded-full bg-[#0B1324] flex items-center justify-center text-white font-serif font-bold italic text-sm flex-shrink-0">GH</div>
+                            <div class="text-left"><p class="text-sm font-bold text-[#0B1324]">@grazisa.handmade</p><p class="text-xs text-gray-500">Artesanato Premium · Salvador</p></div>
+                        </div>
+                        <div class="flex-shrink-0 bg-white border border-gray-200 rounded-xl px-6 py-4 shadow-sm flex items-center gap-3 min-w-[280px]">
+                            <div class="w-10 h-10 rounded-full bg-[#0B1324] flex items-center justify-center text-white font-bold text-[10px] flex-shrink-0">Detroit</div>
+                            <div class="text-left"><p class="text-sm font-bold text-[#0B1324]">@detroit.belavista</p><p class="text-xs text-gray-500">Gastronomia · São Paulo</p></div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Depoimentos em Grid Fixo (sem carrossel) -->
-                <div>
-                    <div class="mb-10">
-                        <span class="text-xs font-bold tracking-[0.2em] text-[#D4AF37] uppercase">Resultados Reais</span>
-                        <h2 class="text-3xl md:text-4xl font-bold text-[#0B1324] mt-2">O que dizem <span class="text-gradient italic">sobre nós</span></h2>
-                    </div>
+            <!-- Depoimentos por nicho -->
+            <div>
+                <div class="text-center mb-10">
+                    <span class="text-xs font-bold tracking-[0.2em] text-[#D4AF37] uppercase">Resultados Reais</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#0B1324] mt-2">O que dizem <span class="text-gradient italic">sobre nós</span></h2>
+                    <p class="text-gray-500 max-w-2xl mx-auto mt-3">Um depoimento por perfil — para você se reconhecer.</p>
+                </div>
 
-                    <div class="space-y-6">
-                        <!-- Depoimento 1 -->
-                        <div class="bg-white p-8 rounded-2xl border border-gray-200 shadow-xl hover:border-[#D4AF37]/50 transition-all duration-300">
-                            <div class="flex gap-1 text-[#D4AF37] mb-4">
-                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                            </div>
-                            <p class="text-gray-700 font-medium italic mb-6 leading-relaxed">"Desde que contratei a assistência virtual, <strong class="text-[#0B1324]">parei de me preocupar com o operacional e vi o dinheiro cair na conta</strong> enquanto eu estava em reunião."</p>
-                            <div class="flex items-center gap-4 border-t border-gray-100 pt-4">
-                                <div class="w-12 h-12 rounded-full bg-[#1A2B4C] flex items-center justify-center text-white font-bold font-serif text-lg">LS</div>
-                                <div>
-                                    <h4 class="text-[#0B1324] font-bold">Larissa Santiago</h4>
-                                    <p class="text-[#D4AF37] text-xs uppercase tracking-wider font-semibold mt-0.5">Empresária</p>
-                                </div>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Depoimento Executivo -->
+                    <div class="bg-white p-8 rounded-2xl border border-gray-200 shadow-xl hover:border-[#D4AF37]/50 transition-all duration-300 flex flex-col">
+                        <span class="self-start text-[10px] font-bold tracking-widest uppercase bg-[#0B1324] text-[#D4AF37] px-3 py-1 rounded-full mb-4">Executivo</span>
+                        <div class="flex gap-1 text-[#D4AF37] mb-4">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                        <p class="text-gray-700 font-medium italic mb-6 leading-relaxed flex-grow">"Consegui <strong class="text-[#0B1324]">finalmente descansar</strong>. Passei a semana sem abrir WhatsApp ou LinkedIn, e os <strong class="text-[#0B1324]">fechamentos de contratos continuaram acontecendo</strong> de forma normal."</p>
+                        <div class="flex items-center gap-4 border-t border-gray-100 pt-4">
+                            <div class="w-12 h-12 rounded-full bg-[#1A2B4C] flex items-center justify-center text-white font-bold font-serif text-lg">FL</div>
+                            <div>
+                                <h4 class="text-[#0B1324] font-bold">Dra. Fabricia Lopes</h4>
+                                <p class="text-[#D4AF37] text-xs uppercase tracking-wider font-semibold mt-0.5">Nutricionista · Executiva</p>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- Depoimento 2 -->
-                        <div class="bg-white p-8 rounded-2xl border border-gray-200 shadow-xl hover:border-[#D4AF37]/50 transition-all duration-300">
-                            <div class="flex gap-1 text-[#D4AF37] mb-4">
-                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <!-- Depoimento Perfumaria/Luxo -->
+                    <div class="bg-white p-8 rounded-2xl border border-gray-200 shadow-xl hover:border-[#D4AF37]/50 transition-all duration-300 flex flex-col">
+                        <span class="self-start text-[10px] font-bold tracking-widest uppercase bg-[#0B1324] text-[#D4AF37] px-3 py-1 rounded-full mb-4">Perfumaria & Luxo</span>
+                        <div class="flex gap-1 text-[#D4AF37] mb-4">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                        <p class="text-gray-700 font-medium italic mb-6 leading-relaxed flex-grow">"A MOVARE entendeu o tom da nossa marca. O atendimento ficou <strong class="text-[#0B1324]">consultivo, sensorial e elegante</strong> — e o ticket médio cresceu sem que eu tivesse que estar no WhatsApp."</p>
+                        <div class="flex items-center gap-4 border-t border-gray-100 pt-4">
+                            <div class="w-12 h-12 rounded-full bg-[#1A2B4C] flex items-center justify-center text-white font-bold font-serif text-lg">LL</div>
+                            <div>
+                                <h4 class="text-[#0B1324] font-bold">Lyra Líbero</h4>
+                                <p class="text-[#D4AF37] text-xs uppercase tracking-wider font-semibold mt-0.5">Perfumaria de Luxo · Lisboa</p>
                             </div>
-                            <p class="text-gray-700 font-medium italic mb-6 leading-relaxed">"Consegui <strong class="text-[#0B1324]">finalmente descansar</strong>. Passei a semana sem abrir WhatsApp ou LinkedIn, e os <strong class="text-[#0B1324]">fechamentos de contratos continuaram acontecendo</strong> de forma normal."</p>
-                            <div class="flex items-center gap-4 border-t border-gray-100 pt-4">
-                                <div class="w-12 h-12 rounded-full bg-[#1A2B4C] flex items-center justify-center text-white font-bold font-serif text-lg">FL</div>
-                                <div>
-                                    <h4 class="text-[#0B1324] font-bold">Dra Fabricia Lopes</h4>
-                                    <p class="text-[#D4AF37] text-xs uppercase tracking-wider font-semibold mt-0.5">Nutricionista</p>
-                                </div>
+                        </div>
+                    </div>
+
+                    <!-- Depoimento MEI -->
+                    <div class="bg-white p-8 rounded-2xl border border-gray-200 shadow-xl hover:border-[#D4AF37]/50 transition-all duration-300 flex flex-col">
+                        <span class="self-start text-[10px] font-bold tracking-widest uppercase bg-[#0B1324] text-[#D4AF37] px-3 py-1 rounded-full mb-4">MEI</span>
+                        <div class="flex gap-1 text-[#D4AF37] mb-4">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                        <p class="text-gray-700 font-medium italic mb-6 leading-relaxed flex-grow">"Eu não entendia nada de DASN, nota fiscal, MEI. <strong class="text-[#0B1324]">Em uma semana ficou tudo regularizado</strong> e hoje eu só foco em atender minhas clientes."</p>
+                        <div class="flex items-center gap-4 border-t border-gray-100 pt-4">
+                            <div class="w-12 h-12 rounded-full bg-[#1A2B4C] flex items-center justify-center text-white font-bold font-serif text-lg">LS</div>
+                            <div>
+                                <h4 class="text-[#0B1324] font-bold">Larissa Santiago</h4>
+                                <p class="text-[#D4AF37] text-xs uppercase tracking-wider font-semibold mt-0.5">MEI · Beleza · Salvador</p>
                             </div>
                         </div>
                     </div>
@@ -384,7 +538,7 @@
         </div>
     </section>
 
-    <!-- ==================== 6. EQUIPE (Fundo Branco — Máxima Clareza e Conexão) ==================== -->
+    <!-- ==================== 8. EQUIPE (sem foto de banco de imagens) ==================== -->
     <section id="equipe" class="py-24 bg-white border-y border-gray-100">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-20 space-y-3">
@@ -393,8 +547,8 @@
                 <p class="text-gray-500 max-w-2xl mx-auto text-lg mt-4">Um time completo e blindado para o seu negócio.</p>
             </div>
 
-            <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-                <!-- Ágatha -->
+            <div class="grid lg:grid-cols-2 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                <!-- Ágatha (foto real) -->
                 <div class="text-center group">
                     <div class="w-60 h-60 mx-auto mb-8 rounded-full border-4 border-[#D4AF37]/30 p-2 transition duration-500 group-hover:border-[#D4AF37] group-hover:shadow-2xl shadow-lg">
                         <div class="w-full h-full rounded-full overflow-hidden bg-white flex items-center justify-center">
@@ -406,13 +560,19 @@
                     <p class="text-gray-500 text-sm leading-relaxed px-4">Estrutura seu negócio para crescer com saúde. Administradora e pós-graduada em finanças com 10 anos de experiência.</p>
                 </div>
 
-               
-                <!-- Time MOVARE -->
+                <!-- Time MOVARE — placeholder gráfico, sem stock photo -->
                 <div class="text-center group">
                     <div class="w-60 h-60 mx-auto mb-8 rounded-full border-4 border-[#D4AF37]/30 p-2 transition duration-500 group-hover:border-[#D4AF37] group-hover:shadow-2xl shadow-lg">
-                        <div class="w-full h-full rounded-full overflow-hidden bg-[#1A2B4C] flex items-center justify-center relative">
-                            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80" alt="Time Operacional MOVARE" class="absolute inset-0 object-cover w-full h-full transition duration-500 group-hover:scale-110 opacity-40 mix-blend-overlay">
-                            <svg class="w-16 h-16 text-[#D4AF37] z-10 drop-shadow-md" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                        <div class="w-full h-full rounded-full overflow-hidden bg-gradient-to-br from-[#0B1324] via-[#1A2B4C] to-[#0B1324] flex items-center justify-center relative">
+                            <!-- Composição com iniciais — assinatura visual sem stock -->
+                            <div class="grid grid-cols-3 gap-2 p-6">
+                                <div class="w-12 h-12 rounded-full bg-[#D4AF37]/90 flex items-center justify-center text-[#0B1324] font-serif font-bold">M</div>
+                                <div class="w-12 h-12 rounded-full bg-white/95 flex items-center justify-center text-[#0B1324] font-serif font-bold">O</div>
+                                <div class="w-12 h-12 rounded-full bg-[#D4AF37]/90 flex items-center justify-center text-[#0B1324] font-serif font-bold">V</div>
+                                <div class="w-12 h-12 rounded-full bg-white/95 flex items-center justify-center text-[#0B1324] font-serif font-bold">A</div>
+                                <div class="w-12 h-12 rounded-full bg-[#D4AF37]/90 flex items-center justify-center text-[#0B1324] font-serif font-bold">R</div>
+                                <div class="w-12 h-12 rounded-full bg-white/95 flex items-center justify-center text-[#0B1324] font-serif font-bold">E</div>
+                            </div>
                         </div>
                     </div>
                     <h3 class="text-2xl font-bold text-[#0B1324] mb-2">Time MOVARE</h3>
@@ -423,7 +583,68 @@
         </div>
     </section>
 
-    <!-- ==================== 7. CTA FINAL (Fundo Azul Escuro — Fechamento com Impacto) ==================== -->
+    <!-- ==================== 9. FAQ (NOVA SEÇÃO) ==================== -->
+    <section id="faq" class="bg-soft-blue py-24">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-xs font-bold tracking-[0.2em] text-[#D4AF37] uppercase">Perguntas Frequentes</span>
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 text-[#0B1324] mt-2">Tirando suas <span class="text-gradient italic">dúvidas</span></h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">Antes de chamar no WhatsApp, dá uma olhada nas respostas mais comuns.</p>
+            </div>
+
+            <div class="space-y-4">
+                <details class="bg-white p-6 rounded-2xl border border-gray-200 hover:border-[#D4AF37]/60 transition group">
+                    <summary class="flex justify-between items-center font-bold text-[#0B1324]">
+                        <span>Como funciona o sigilo das minhas informações?</span>
+                        <span class="faq-icon text-[#D4AF37] text-2xl font-light leading-none">+</span>
+                    </summary>
+                    <p class="mt-4 text-gray-600 leading-relaxed text-sm">Toda nossa equipe é certificada em LGPD e assina NDA antes de qualquer acesso. Senhas são gerenciadas via cofre criptografado e acessos são revogados imediatamente ao fim de qualquer projeto.</p>
+                </details>
+
+                <details class="bg-white p-6 rounded-2xl border border-gray-200 hover:border-[#D4AF37]/60 transition group">
+                    <summary class="flex justify-between items-center font-bold text-[#0B1324]">
+                        <span>Tem contrato? E se eu quiser cancelar?</span>
+                        <span class="faq-icon text-[#D4AF37] text-2xl font-light leading-none">+</span>
+                    </summary>
+                    <p class="mt-4 text-gray-600 leading-relaxed text-sm">Sim, contrato mensal com renovação automática. Cancelamento simples com 30 dias de aviso prévio — sem multa, sem fidelidade longa, sem burocracia.</p>
+                </details>
+
+                <details class="bg-white p-6 rounded-2xl border border-gray-200 hover:border-[#D4AF37]/60 transition group">
+                    <summary class="flex justify-between items-center font-bold text-[#0B1324]">
+                        <span>Como é a comunicação no dia a dia?</span>
+                        <span class="faq-icon text-[#D4AF37] text-2xl font-light leading-none">+</span>
+                    </summary>
+                    <p class="mt-4 text-gray-600 leading-relaxed text-sm">Você tem um canal direto com sua assistente (WhatsApp, Slack ou e-mail — você escolhe), uma reunião semanal de alinhamento e relatórios em todo fim de semana com tudo o que foi executado.</p>
+                </details>
+
+                <details class="bg-white p-6 rounded-2xl border border-gray-200 hover:border-[#D4AF37]/60 transition group">
+                    <summary class="flex justify-between items-center font-bold text-[#0B1324]">
+                        <span>Quantas horas por mês estão inclusas?</span>
+                        <span class="faq-icon text-[#D4AF37] text-2xl font-light leading-none">+</span>
+                    </summary>
+                    <p class="mt-4 text-gray-600 leading-relaxed text-sm">Trabalhamos com pacotes a partir de 20h/mês, mas o ideal é definir no diagnóstico. A maioria dos nossos clientes opera com 40h–80h mensais.</p>
+                </details>
+
+                <details class="bg-white p-6 rounded-2xl border border-gray-200 hover:border-[#D4AF37]/60 transition group">
+                    <summary class="flex justify-between items-center font-bold text-[#0B1324]">
+                        <span>Trabalham com qual fuso horário?</span>
+                        <span class="faq-icon text-[#D4AF37] text-2xl font-light leading-none">+</span>
+                    </summary>
+                    <p class="mt-4 text-gray-600 leading-relaxed text-sm">Atendemos no horário comercial brasileiro (GMT-3), e temos disponibilidade para clientes na Europa em janelas combinadas — já atuamos com clientes em Lisboa, Porto e Madri.</p>
+                </details>
+
+                <details class="bg-white p-6 rounded-2xl border border-gray-200 hover:border-[#D4AF37]/60 transition group">
+                    <summary class="flex justify-between items-center font-bold text-[#0B1324]">
+                        <span>Em quanto tempo começamos depois do "sim"?</span>
+                        <span class="faq-icon text-[#D4AF37] text-2xl font-light leading-none">+</span>
+                    </summary>
+                    <p class="mt-4 text-gray-600 leading-relaxed text-sm">Onboarding leva de 3 a 7 dias úteis. Depois disso, sua assistente começa a executar imediatamente as primeiras tarefas combinadas no diagnóstico.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 10. CTA FINAL ==================== -->
     <section class="bg-deep-blue py-32 text-center border-t border-white/5">
         <div class="max-w-4xl mx-auto px-6 relative z-10">
             <h2 class="text-4xl md:text-6xl font-bold mb-8 text-white">
@@ -432,29 +653,83 @@
             <p class="text-xl text-gray-300 mb-12 leading-relaxed max-w-2xl mx-auto">
                 Conte sua principal dor operacional em 2 minutos e receba um plano de ação personalizado.
             </p>
-            <a href="https://wa.me/5571983136600?text=Ol%C3%A1!%20Meu%20perfil%20%C3%A9%20%5BExecutivo%2FPerfumaria%2FMEI%5D%20e%20minha%20maior%20dor%20hoje%20%C3%A9%20%5BOPERACIONAL%2FATENDIMENTO%2FBUROCRACIA%5D.%20Quero%20um%20diagn%C3%B3stico." target="_blank" class="bg-[#D4AF37] text-[#0B1324] px-12 py-5 rounded-full font-bold text-lg hover:bg-yellow-500 transition shadow-[0_0_40px_rgba(212,175,55,0.4)] inline-block hover:-translate-y-1 transform duration-300">
+            <a href="https://wa.me/5571983136600?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20MOVARE%20e%20quero%20um%20diagn%C3%B3stico%20gratuito.%20Posso%20te%20contar%20um%20pouco%20sobre%20o%20meu%20neg%C3%B3cio%3F" target="_blank" class="bg-[#D4AF37] text-[#0B1324] px-12 py-5 rounded-full font-bold text-lg hover:bg-yellow-500 transition shadow-[0_0_40px_rgba(212,175,55,0.4)] inline-block hover:-translate-y-1 transform duration-300">
                 Quero um Diagnóstico Gratuito
             </a>
+            <p class="text-xs text-gray-400 mt-6 uppercase tracking-widest">Sem compromisso · Resposta em até 2h úteis</p>
         </div>
     </section>
 
-    <!-- ==================== FOOTER ==================== -->
-    <footer class="bg-[#060A14] py-12 border-t border-white/10 text-center text-gray-500 text-sm flex flex-col items-center">
-        <div class="mb-6 flex items-center justify-center gap-8">
-            <a href="https://instagram.com/movare.br" target="_blank" class="flex items-center gap-2 hover:text-[#D4AF37] transition text-gray-400 font-semibold tracking-widest uppercase text-xs group">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="transition-transform group-hover:scale-110" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/></svg>
-                Instagram
-            </a>
-            <a href="https://www.linkedin.com/company/movarebr/?viewAsMember=true" target="_blank" class="flex items-center gap-2 hover:text-[#D4AF37] transition text-gray-400 font-semibold tracking-widest uppercase text-xs group">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="transition-transform group-hover:scale-110" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/></svg>
-                LinkedIn
-            </a>
+    <!-- ==================== FOOTER (Rico) ==================== -->
+    <footer class="bg-[#060A14] pt-16 pb-8 border-t border-white/10 text-gray-400 text-sm">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-10 mb-12">
+                <!-- Marca -->
+                <div class="md:col-span-1">
+                    <h3 class="text-white font-bold text-xl mb-3">MOVARE</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed mb-4">Assessoria Virtual Estratégica para quem precisa parar de ser o(a) faz-tudo.</p>
+                    <div class="inline-flex items-center gap-2 bg-green-900/30 text-green-400 px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider border border-green-800/50">
+                        <span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span> Certificado LGPD
+                    </div>
+                </div>
+
+                <!-- Soluções -->
+                <div>
+                    <h4 class="text-white font-bold text-xs uppercase tracking-widest mb-4">Soluções</h4>
+                    <ul class="space-y-2">
+                        <li><a href="https://movarebr.github.io/movare-proposta-assessoria/" target="_blank" class="hover:text-[#D4AF37] transition">Assessoria Executiva</a></li>
+                        <li><a href="https://movarebr.github.io/movare-proposta-perfumaria/" target="_blank" class="hover:text-[#D4AF37] transition">Perfumaria & Luxo</a></li>
+                        <li><a href="https://movarebr.github.io/movare-proposta-mei/" target="_blank" class="hover:text-[#D4AF37] transition">Assessoria MEI</a></li>
+                    </ul>
+                </div>
+
+                <!-- Navegação -->
+                <div>
+                    <h4 class="text-white font-bold text-xs uppercase tracking-widest mb-4">Empresa</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#como-funciona" class="hover:text-[#D4AF37] transition">Como funciona</a></li>
+                        <li><a href="#resultados" class="hover:text-[#D4AF37] transition">Resultados</a></li>
+                        <li><a href="#sobre" class="hover:text-[#D4AF37] transition">Sobre</a></li>
+                        <li><a href="#faq" class="hover:text-[#D4AF37] transition">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contato -->
+                <div>
+                    <h4 class="text-white font-bold text-xs uppercase tracking-widest mb-4">Fale conosco</h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="https://wa.me/5571983136600" target="_blank" class="flex items-center gap-2 hover:text-[#25D366] transition">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+                                WhatsApp
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://instagram.com/movare.br" target="_blank" class="flex items-center gap-2 hover:text-[#D4AF37] transition">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/></svg>
+                                @movare.br
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/company/movarebr/" target="_blank" class="flex items-center gap-2 hover:text-[#D4AF37] transition">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/></svg>
+                                LinkedIn
+                            </a>
+                        </li>
+                        <li class="text-gray-500 text-xs pt-2">Salvador · Bahia · Brasil</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-gray-500">
+                <p>© 2026 MOVARE | Assessoria Estratégica. Todos os direitos reservados.</p>
+                <p class="uppercase tracking-widest">Feito com cuidado · 100% remoto</p>
+            </div>
         </div>
-        <p>© 2026 MOVARE | Assessoria Estratégica. Salvador, Bahia.</p>
     </footer>
 
-    <!-- ==================== BOTÃO FLUTUANTE DO WHATSAPP ==================== -->
-    <a href="https://wa.me/5571983136600?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20assessoria." target="_blank" class="whatsapp-float" aria-label="Fale conosco pelo WhatsApp">
+    <!-- ==================== BOTÃO FLUTUANTE DO WHATSAPP (mensagem natural) ==================== -->
+    <a href="https://wa.me/5571983136600?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20MOVARE%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20assessoria%20virtual." target="_blank" class="whatsapp-float" aria-label="Fale conosco pelo WhatsApp">
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     </a>
 
