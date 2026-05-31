@@ -16,4 +16,20 @@
     <loc>https://movareassessoria.com.br/licitacoes/</loc>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://movareassessoria.com.br/blog/</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://movareassessoria.com.br/blog/como-contratar-assistente-virtual/</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://movareassessoria.com.br/blog/o-que-e-mei/</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://movareassessoria.com.br/blog/como-delegar-o-operacional/</loc>
+    <priority>0.6</priority>
+  </url>
 </urlset>
